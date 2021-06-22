@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+F:\CDAC Course\5th MODULE = OOPS with Java\Assignments\Assignment_7\.metadata\.plugins\org.eclipse.jdt.core
-3136097187.index
-602167833.index
