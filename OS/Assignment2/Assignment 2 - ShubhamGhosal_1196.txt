@@ -1,0 +1,218 @@
+----------------------------------------------------------------------------------------
+Operating System Concepts
+Assignment No.2 (Day2 - Theory)
+Submitted by : Shubham Ghosal
+Batch 4
+PRN : 210540181196
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+Q1) What does each location in the parent directory structure in Linux refer – one liner ?
+
+[root@localhost ~]# cd /
+[root@localhost /]# ls
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+boot  etc  lib   media  opt  root  sbin  sys  usr
+
+-bin : contains essential user command binaries
+-dev : contains device files
+-home : user's home directory
+-lib64 : 64-bit library files
+-mnt : generic mount point to mount filesystems
+-proc : provides a method of communication between kernel space and user space.
+-run : tempfs file system and runs in RAM. Contains the kernel information
+-srv : contains data for service from system. Has the service information
+-tmp: used to store temporary files
+-var: contains variable files
+-boot: contains static files of bootloader
+-etc: contains host specific system configuration files
+-lib : contains library files used by the system
+-media : mount point for removable media devices
+-opt : reserved for the installation of add-on application software packages
+-root : home directory of root user
+-sbin : contains system binaries
+-sys : stores and allows modification connected devices
+-usr : contains user utilities and application
+
+------------------------------------------------------------------------------------
+Q2) How to set umask –temp and permanent ?
+
+Changing umask values temporary :
+
+[root@localhost ~]$ umask 0002
+[root@localhost ~]$ umask
+0002
+
+-This method will change the umask only when the present session is active.
+
+Changing umask values permanently :
+
+- change the umask value to 0002 in ~/.bash_profile file
+[root@localhost ~]$ vi ~/.bash_profile
+umask 0002
+[root@localhost ~]$ umask
+0002
+
+- This method will work even after exiting from current session or even after restarting the system.
+Such that the umask values will not change in this case.
+
+-----------------------------------------------------------------------------------------------------------
+Q.3) Create a user ‘user1’ Login as that user and create two directories ‘dir1’ ‘dir2’:
+
+[sghosal@localhost ~]$ su - root
+Password: 
+Last login: Fri May  7 21:56:14 PDT 2021 on pts/0
+[root@localhost ~]# useradd user1
+[root@localhost ~]# passwd user1
+Changing password for user user1.
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@localhost ~]# su - user1
+[user1@localhost ~]$ mkdir dir{1,2}
+[user1@localhost ~]$ ls
+dir1  dir2
+
+-------------------------------------------------------------------------------------------
+Q.4) Create 100 files in dir1 and 100 files in dir2 :
+
+[user1@localhost ~]$ cd dir1
+[user1@localhost dir1]$ touch file{1..100}
+[user1@localhost dir1]$ ls
+file1    file18  file27  file36  file45  file54  file63  file72  file81  file90
+file10   file19  file28  file37  file46  file55  file64  file73  file82  file91
+file100  file2   file29  file38  file47  file56  file65  file74  file83  file92
+file11   file20  file3   file39  file48  file57  file66  file75  file84  file93
+file12   file21  file30  file4   file49  file58  file67  file76  file85  file94
+file13   file22  file31  file40  file5   file59  file68  file77  file86  file95
+file14   file23  file32  file41  file50  file6   file69  file78  file87  file96
+file15   file24  file33  file42  file51  file60  file7   file79  file88  file97
+file16   file25  file34  file43  file52  file61  file70  file8   file89  file98
+file17   file26  file35  file44  file53  file62  file71  file80  file9   file99
+
+[user1@localhost dir1]$ cd ~
+[user1@localhost ~]$ cd dir2
+[user1@localhost dir2]$ touch file{1..100}
+[user1@localhost dir2]$ pwd
+/home/user1/dir2
+
+----------------------------------------------------------------------------------------
+Q.5) Copy ALL files of dir1 to dir2 :
+
+[user1@localhost dir2]$ cd ~
+[user1@localhost ~]$ cp /home/user1/dir1/file{1..100} /home/user1/dir2
+[user1@localhost ~]$ ls dir1
+file1    file18  file27  file36  file45  file54  file63  file72  file81  file90
+file10   file19  file28  file37  file46  file55  file64  file73  file82  file91
+file100  file2   file29  file38  file47  file56  file65  file74  file83  file92
+file11   file20  file3   file39  file48  file57  file66  file75  file84  file93
+file12   file21  file30  file4   file49  file58  file67  file76  file85  file94
+file13   file22  file31  file40  file5   file59  file68  file77  file86  file95
+file14   file23  file32  file41  file50  file6   file69  file78  file87  file96
+file15   file24  file33  file42  file51  file60  file7   file79  file88  file97
+file16   file25  file34  file43  file52  file61  file70  file8   file89  file98
+file17   file26  file35  file44  file53  file62  file71  file80  file9   file99
+[user1@localhost ~]$ ls dir2
+file1    file18  file27  file36  file45  file54  file63  file72  file81  file90
+file10   file19  file28  file37  file46  file55  file64  file73  file82  file91
+file100  file2   file29  file38  file47  file56  file65  file74  file83  file92
+file11   file20  file3   file39  file48  file57  file66  file75  file84  file93
+file12   file21  file30  file4   file49  file58  file67  file76  file85  file94
+file13   file22  file31  file40  file5   file59  file68  file77  file86  file95
+file14   file23  file32  file41  file50  file6   file69  file78  file87  file96
+file15   file24  file33  file42  file51  file60  file7   file79  file88  file97
+file16   file25  file34  file43  file52  file61  file70  file8   file89  file98
+file17   file26  file35  file44  file53  file62  file71  file80  file9   file99
+
+-This results in copying the files from dir1 to dir2.
+
+--------------------------------------------------------------------------------------------
+Q.6) Move ALL files of dir2 to dir1 :
+
+[user1@localhost ~]$ cd dir2
+[user1@localhost dir2]$ mv /home/user1/dir2/file{1..100} /home/user1/dir1
+[user1@localhost dir2]$ ls
+[user1@localhost dir2]$ cd dir1
+-bash: cd: dir1: No such file or directory
+[user1@localhost dir2]$ cd ~
+[user1@localhost ~]$ cd dir1
+[user1@localhost dir1]$ ls
+file1    file18  file27  file36  file45  file54  file63  file72  file81  file90
+file10   file19  file28  file37  file46  file55  file64  file73  file82  file91
+file100  file2   file29  file38  file47  file56  file65  file74  file83  file92
+file11   file20  file3   file39  file48  file57  file66  file75  file84  file93
+file12   file21  file30  file4   file49  file58  file67  file76  file85  file94
+file13   file22  file31  file40  file5   file59  file68  file77  file86  file95
+file14   file23  file32  file41  file50  file6   file69  file78  file87  file96
+file15   file24  file33  file42  file51  file60  file7   file79  file88  file97
+file16   file25  file34  file43  file52  file61  file70  file8   file89  file98
+file17   file26  file35  file44  file53  file62  file71  file80  file9   file99
+
+-This results in dir1 to be empty which is then moved to dir2.
+
+------------------------------------------------------------------------------------------------
+Q.7) What is the permission of the directory right now?
+
+[user1@localhost dir1]$ cd ~
+[user1@localhost ~]$ ls -l
+total 4
+drwxrwxr-x. 2 user1 user1 4096 May  7 22:36 dir1
+drwxrwxr-x. 2 user1 user1    6 May  7 22:36 dir2
+
+-The permissions of dir2 are 7 for owner/user 7 for group and 5 for others.
+
+------------------------------------------------------------------------------------------------------------
+Q.8) Add two files in the directory – what is the permission of these two files? is the same as that dir2?
+
+[user1@localhost ~]$ cd dir2
+[user1@localhost dir2]$ touch file{1,2}
+[user1@localhost dir2]$ ls
+file1  file2
+[user1@localhost dir2]$ ls -l
+total 0
+-rw-rw-r--. 1 user1 user1 0 May  7 22:57 file1
+-rw-rw-r--. 1 user1 user1 0 May  7 22:57 file2
+
+
+-The permissions are 664 for the files which is not the same as that of dir2.
+
+--------------------------------------------------------------------------------------------------------------
+Q.9) Run the command chmod –R 777 dir2
+
+[user1@localhost ~]$ chmod -R 777 dir2
+[user1@localhost ~]$ ls -l
+total 4
+drwxrwxr-x. 2 user1 user1 4096 May  7 22:36 dir1
+drwxrwxrwx. 2 user1 user1   32 May  7 22:57 dir2
+
+-Permissions of dir2 is changed to 777
+
+[user1@localhost ~]$ cd dir2
+[user1@localhost dir2]$ ls -l
+total 0
+-rwxrwxrwx. 1 user1 user1 0 May  7 22:57 file1
+-rwxrwxrwx. 1 user1 user1 0 May  7 22:57 file2
+
+-As a result permissions of the files in this directory 2 also changes
+
+-----------------------------------------------------------------------------------------------------------------------------
+Q.10) Create two new files named file3 and file4 and observe the permission of these two files? Is it same as that of dir2?
+
+[user1@localhost dir2]$ touch file{3,4}
+[user1@localhost dir2]$ ls -l
+total 0
+-rwxrwxrwx. 1 user1 user1 0 May  7 22:57 file1
+-rwxrwxrwx. 1 user1 user1 0 May  7 22:57 file2
+-rw-rw-r--. 1 user1 user1 0 May  7 23:04 file3
+-rw-rw-r--. 1 user1 user1 0 May  7 23:04 file4
+
+-Hence after comparing we observe that the permissions are different/not same as that of dir2.
+
+-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

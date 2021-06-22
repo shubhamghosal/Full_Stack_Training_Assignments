@@ -1,0 +1,254 @@
+Q) Write a command that fetches the list of all world writable files under /root directory
+
+Solution:
+
+[shubham@localhost ~]$ su - root
+Password: 
+Last login: Mon May 24 22:31:54 PDT 2021 on pts/0
+[root@localhost ~]# find /root -xdev -perm +o=w ! \( -type d -perm +o=t \) ! -type l -print
+
+Q) Write a command that fetches the list of all files under /root directory that are more than 2KB in size
+
+Solution:
+[shubham@localhost ~]$ su - root
+Password: 
+Last login: Mon May 24 22:33:24 PDT 2021 on pts/0
+[root@localhost ~]# find . -type f -size +2k
+
+Q) Create a script that asks for a user name and add that user with password same as that of user name. The user added should be assigned nologin shell
+
+Solution:
+
+[shubham@localhost ~]$ su - root
+Password: 
+Last login: Mon May 30 00:33:24 PDT 2021 on pts/0
+[root@localhost ~]# vi user-script.sh
+
+#!/bin/bash
+# Script to add a user including passsword
+
+if [ $(id -u) -eq 0 ]; then
+	read -p "Enter username : " username
+	egrep "^$username" /etc/passwd >/dev/null
+	if [ $? -eq 0 ]; then
+		echo "$username exists!"
+		exit 1
+	else
+		pass=$username
+		useradd -m -p "$pass" "$username"
+		[ $? -eq 0 ] && echo "User has been added to system!" || echo "Failed to add a user!"
+		usermod -s /sbin/nologin $username
+	fi
+else
+	echo "Only root may add a user to the system."
+	exit 2
+fi
+:wq
+# chmod +x user-script.sh
+# ./user-script.sh
+Enter username : ShubhamG
+User has been added to system!
+[root@localhost ~]# grep -w 'ShubhamG' /etc/passwd
+ShubhamG:x:1002:1002::/home/ShubhamG:/sbin/nologin
+
+
+
+Q) Create a calculator program in bash that takes two numbers (integers) and display menu to the user for various mathematical operations. Hint: Switch Case Break
+Solution:
+
+# !/bin/bash
+  
+echo "Enter Two numbers : "
+read a
+read b
+  
+echo "Enter Choice :"
+echo "1. Addition"
+echo "2. Subtraction"
+echo "3. Multiplication"
+echo "4. Division"
+read ch
+  
+# Switch Case to perform
+case $ch in
+  1)res=`echo $a + $b | bc`
+  ;;
+  2)res=`echo $a - $b | bc`
+  ;;
+  3)res=`echo $a \* $b | bc`
+  ;;
+  4)res=`echo "scale=2; $a / $b" | bc`
+  ;;
+esac
+echo "Result : $res"
+
+Q) Create 2 VMs - both CentOS 7 (with fresh snapshots) with names - machineA and machineB
+	1. From machineA copy any file to machineB
+	2. From machineA - create a dir named 'testdir' on machineB
+	3. From machineA - run forkbomb -   :(){ :|: & };:   - on machineB
+
+Solution:
+
+1)
+ifconfig
+scp /home/testfile.txt root@192.168.0.11:/home/machine2
+
+Q) Run the following two programs -> analyse & explain the output:
+First
+-----
+#include<stdio.h> 
+#include<unistd.h> 
+#include<sys/wait.h> 
+#include<sys/types.h> 
+
+int main() 
+{ 
+	int i; 
+	int pid = fork(); 
+
+	if (pid == 0) 
+	{ 
+		for (i=0; i<20; i++) 
+			printf("I am Child\n"); 
+	} 
+	else
+	{ 
+		printf("I am Parent\n"); 
+		while(1); 
+	} 
+} 
+
+Second
+------
+#include<stdio.h> 
+#include<unistd.h> 
+#include<sys/wait.h> 
+#include<sys/types.h> 
+
+int main() 
+{ 
+	int i; 
+	int pid = fork(); 
+	if (pid==0) 
+	{ 
+		for (i=0; i<20; i++) 
+			printf("I am Child\n"); 
+	} 
+	else
+	{ 
+		wait(NULL); 
+		printf("I am Parent\n"); 
+		while(1); 
+	} 
+} 
+
+Q) Create a script that depicts sending the process to background so that the next command in sequence can run without wait
+Q) Create a script that displays the system information like: OS name, kernel version, RAM, etc..
+Q) Create a shell script to find the largest among the 3 given numbers
+Solution:
+
+
+#!/bin/bash
+# Script to find the greatest of three numbers
+
+echo "Enter Num1"
+read num1
+echo "Enter Num2"
+read num2
+echo "Enter Num3"
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+    echo $num1
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+    echo $num2
+else
+    echo $num3
+fi
+
+Q) Create a shell program to check whether a given string is palindrome
+Solution:
+
+#!/bin/bash
+read -p "Enter the string: " name
+echo " "
+
+name1=$(echo $name | rev)
+if [ "$name" == "$name1" ]
+then
+echo "**$name is palindrome**"
+else
+echo "**$name is not a palindrome**"
+fi
+
+Q) Create a shell program to count number of words, characters, white spaces and special symbols in a given text
+
+Solution:
+#!/bin/bash
+
+echo "Enter a String"
+read text
+
+# Counting words
+word=$(echo -n "$text" | wc -w)
+# Counting characters
+char=$(echo -n "$text" | wc -c)
+
+# Counting Number of white spaces
+# sed "s/ change this to whitespace//g"
+space=$(expr length "$text" - length `echo "$text" | sed "s/ //g"`)
+
+# Counting special characters
+special=$(expr length "${text//[^\~!@#$&*()]/}")
+
+# Output
+echo "Number of Words = $word"
+echo "Number of Characters = $char"
+echo "Number of White Spaces = $space"
+echo "Number of Special symbols = $special"
+
+Q) Create a script to remove all empty lines from a file
+Q) Create a script that fetches only the IP address of the machine from output of ifconfig command
+
+Solution:
+[shubham@localhost ~]$ /sbin/ifconfig
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:69527 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:69527 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:41559546 (39.6 MiB)  TX bytes:41559546 (39.6 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 00:17:9A:0A:F6:44
+          inet addr:192.168.2.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::217:9aff:fe0a:f644/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:227614 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:60421 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:272 txqueuelen:1000
+          RX bytes:69661583 (66.4 MiB)  TX bytes:10361043 (9.8 MiB)
+          Interrupt:17
+
+ra0       Link encap:Ethernet  HWaddr 00:50:56:C0:00:01
+          inet addr:192.168.1.2  Bcast:192.168.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:56ff:fec0:1/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1024 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1320 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+[shubham@localhost ~]$ /sbin/ifconfig eth0
+[shubham@localhost ~]$ /sbin/ifconfig eth0| grep 'inet addr:'
+inet addr:192.168.2.1  Bcast:192.168.2.255  Mask:255.255.255.0
+
+[shubham@localhost ~]$ /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'
+192.168.2.1
+
+Q) Create a script that asks for repo name and creates a repository on github with that name
+
+
+

@@ -1,0 +1,123 @@
+----------------------------------------------------------------------------------------
+Operating System Concepts
+Assignment 3 (Day3 - Theory)
+Submitted by : Shubham Ghosal
+Batch 4
+PRN : 210540181196
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+Q.1) Write a script where user enters a username and outputs says if that user is present on linux bo or not
+
+[root@localhost ~]# cat /etc/passwd | cut -d':' -f1,7 | grep 'bash'
+root:/bin/bash
+sghosal:/bin/bash
+shubham:/bin/bash
+sunil:/bin/bash
+ravi:/bin/bash
+[root@localhost ~]# vi script1.sh
+[root@localhost ~]# cat script1.sh
+
+The Shell Script:
+
+#!/bin/bash
+read -p "Enter username: " usrname
+var=$(cat /etc/passwd | grep "$usrname")
+if [[ -n $var ]]
+	then
+		echo "User '$usrname'  is present on the system"
+	else
+		echo "User '$usrname' does not exist"
+fi
+
+[root@localhost ~]# bash script1.sh
+Enter username: sunil
+User 'sunil'  is present on the system
+[root@localhost ~]# bash script1.sh
+Enter username: tanvi
+User 'tanvi' does not exist
+
+-Hence we see the output exactly shows whether the user is present on the system or not
+
+------------------------------------------------------------------------------------------------------------------
+Q.2) Write a script where user enters a file path and output says if input path is a file or a directory.
+
+
+[root@localhost ~]# mkdir testdir
+[root@localhost ~]# touch testfile
+[root@localhost ~]# touch testfile.txt
+[root@localhost ~]# pwd
+/root
+[root@localhost ~]# ls
+'  anaconda-ks.cfg  dir2  f1  original-ks.cfg  script1.sh  script2.sh  script3.sh  testdir  testfile  testfile.txt
+[root@localhost ~]# vi script2.sh
+[root@localhost ~]# cat script2.sh
+
+The Shell Script:
+
+#!/bin/bash
+
+read -p "Enter the path: " pth
+
+if [[ -d $pth ]]
+then
+	echo "$pth is a directory"
+elif [[ -f $pth ]]
+then
+ 	echo "$pth is a file"
+else
+ 	echo "$pth is not valid file or directory"
+
+fi
+
+[root@localhost ~]# bash script2.sh
+Enter the path: /root/testfile.txt
+/root/testfile.txt is a file
+[root@localhost ~]# bash script2.sh
+Enter the path: /root/testdir
+/root/testdir is a directory
+[root@localhost ~]# bash script2.sh
+Enter the path: /root/testfile
+/root/testfile is a file
+[root@localhost ~]# bash script2.sh
+Enter the path: /root/test
+/root/test is not valid file or directory
+
+- We checked whether the path given is file, directory or non valid through the shell script.
+----------------------------------------------------------------------------------------------------------------------
+Q.3) Write a script where username is entered and its userid is displayed in the output
+
+[root@localhost ~]# cat /etc/passwd | awk -F':' '{if ($3 > 999) print $1,$3}'
+nfsnobody 65534
+sghosal 1000
+shubham 1001
+sunil 1002
+ravi 1003
+[root@localhost ~]# vi script3.sh
+[root@localhost ~]# cat script3.sh
+
+The Shell Script:
+
+#!/bin/bash
+read -p "Enter username: " user
+var=$(cat /etc/passwd | grep "^$user\>" | cut -d':' -f3)
+if [[ -n $var ]]
+	then
+		echo "Userid is $var."
+        else
+		echo "User not present"
+fi
+
+[root@localhost ~]# bash script3.sh
+Enter username: sunil
+Userid is 1002.
+[root@localhost ~]# bash script3.sh
+Enter username: ravi
+Userid is 1003.
+[root@localhost ~]# bash script3.sh
+Enter username: sunita
+User not present
+
+-This script shows the userid of the entered username after checking that the user is present or not.
+--------------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,19 @@
+Question2 Solution:
+
+shubham@ubuntu:~$ sudo cp -f /etc/*.conf /home
+
+Output:
+[sudo] password for shubham: 
+shubham@ubuntu:~$ cd /home
+shubham@ubuntu:/home$ ls
+adduser.conf          kernel-img.conf  pnm2ppa.conf
+apg.conf              kerneloops.conf  popularity-contest.conf
+appstream.conf        ld.so.conf       resolv.conf
+brltty.conf           libao.conf       rsyslog.conf
+ca-certificates.conf  libaudit.conf    sensors3.conf
+debconf.conf          logrotate.conf   shubham
+deluser.conf          ltrace.conf      sysctl.conf
+fuse.conf             mke2fs.conf      ucf.conf
+gai.conf              mtools.conf      updatedb.conf
+hdparm.conf           nsswitch.conf    usb_modeswitch.conf
+host.conf             pam.conf
