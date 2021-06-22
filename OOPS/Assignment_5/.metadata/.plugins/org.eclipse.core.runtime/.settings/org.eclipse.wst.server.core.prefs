@@ -1,2 +1,0 @@
-eclipse.preferences.version=1
-runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="VMware tc Server Developer Edition (Runtime) v4.1" id-set\="true" location\="C\:/Java IDE (STS 3 Bundle)/sts-bundle/pivotal-tc-server" name\="VMware tc Server Developer Edition (Runtime) v4.1" runtime-type-id\="com.vmware.server.tc.runtime.90" timestamp\="0"/>\r\n</runtimes>\r\n
