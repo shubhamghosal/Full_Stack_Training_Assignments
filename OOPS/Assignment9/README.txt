@@ -6,3 +6,5 @@ applying equals in validation rules , nested classes , association , why generic
 
 3. Solve ready code sample , with help of lab faculty 
 day8-data\day8_help\enums\enums
+
+
