@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        fieldset {
+            width: 25%;
+            border-color: blue;
+        }
+    </style>
+    <script>
+        function submit() {
+            var rad = document.getElementById("radius").value;
+            var area = rad * rad * Math.PI;
+            var circum = 2 * Math.PI * rad;
+            document.getElementById("result").innerHTML = "Area: " + area + "<br>" + "Circumference: " + circum;
+        }
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <div>Enter Radius: <input type="text" id="radius"></div> <br>
+        <div><input type="button" value="display" onclick="submit()"></div>
+        <span id="result"></span>
+    </fieldset>
+</body>
+
+</html>

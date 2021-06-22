@@ -1,0 +1,2 @@
+101,Java,Harin,700
+102,Python,Sujoy,850

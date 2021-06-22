@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22</title>
+    <script>
+        var siteArr = ["www.google.com", "www.amazon.co.in", "www.msn.com", "in.answers.yahoo.com", "www.coderanch.com", "en.m.wikipedia.com"];
+
+        var counter = 0;
+
+        siteArr.forEach(site => {
+            if (site.search(/www\./) == 0)
+                //search() returns the index at which given substring or regex is present. Returns -1 if not present
+                ++counter;
+            console.log(counter);
+        })
+
+        document.write(counter);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

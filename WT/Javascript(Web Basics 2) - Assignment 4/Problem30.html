@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function displayOrder() {
+            var oid = document.getElementById("oid").value;
+            var cname = document.getElementById("cname").value;
+            var bdate = document.getElementById("bdate").value;
+            var sdate = document.getElementById("sdate").value;
+            var ortot = parseInt(document.getElementById("ortot").value);
+            if (cname.length < 6) {
+                document.getElementById("val1").innerHTML = "Cust name cannot be <6 characters";
+                document.getElementById("val1").style.color = "red"
+                return false;
+            }
+            else if (cname.length == isNaN || cname.length == "") {
+                document.getElementById("val1").innerHTML = "Invalid/Empty Input"
+                return false;
+            }
+            if (Date.parse(bdate) > Date.parse(sdate)) {
+                document.getElementById("val2").innerHTML = "Billing date cannot be greater than shipping date";
+                document.getElementById("val2").style.color = "red"
+                return false;
+            }
+            if (oid == isNaN || oid == "" || ortot == isNaN || ortot == "") {
+                return false;
+            }
+            else {
+                var Object = {
+                    order: oid,
+                    customer: cname,
+                    billing: bdate,
+                    shipping: sdate,
+                    total: ortot,
+                };
+                var newTab = window.open("", "", "width=600,height=600");
+                newTab.document.write("<table border=2 cellspacing=0><tr><td><b> Order id: </b> </td>" + "<td>" + Object.order + "</td></tr>");
+                newTab.document.write("<tr><td><b> Cust name: </b> </td>" + "<td>" + Object.customer + "</td></tr>");
+                newTab.document.write("<tr><td><b> Billing date: </b> </td>" + "<td>" + Object.billing + "</td></tr>");
+                newTab.document.write("<tr><td><b> Shipping date: </b> </td>" + "<td>" + Object.shipping + "</td></tr>");
+                newTab.document.write("<tr><td><b> Order total: </b> </td>" + "<td>$" + Object.total + "</td></tr></table>");
+                return true;
+            }
+
+        }
+    </script>
+
+</head>
+
+<body style="background-color: aquamarine;">
+    <h1 style="text-align: center;">Order Details</h1>
+    <fieldset style="border-color: blue; background-color: antiquewhite; margin: auto; width: 40%;">
+        <div>Order ID : <input type="text" name="order" id="oid" required></div><br>
+        <div>Cust name : <input type="text" name="custname" id="cname">&nbsp;<span id="val1"></span></div><br>
+        <div>Enter Billing date : <input type="date" name="billdate" id="bdate">&nbsp;<span id="val2"></span></div><br>
+        <div>Enter Shipping date: <input type="date" name="shipdate" id="sdate"></div><br>
+        <div>Order total : <input type="number" name="ordertotal" id="ortot"></div><br>
+        <div><input type="button" value="display" onclick="displayOrder()"></div><br>
+        <div id="res1"></div>
+    </fieldset>
+</body>
+
+</html>

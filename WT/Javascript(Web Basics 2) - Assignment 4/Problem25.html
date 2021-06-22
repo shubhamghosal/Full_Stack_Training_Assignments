@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            fieldset {
+                border :2px solid blue;
+                width:500px;
+            }
+            
+        </style>
+        <script>
+            function submit() {
+                if(document.getElementById("search").checked==true) {
+                    var str1=document.getElementById("str").value;
+                    var str2=document.getElementById("substr").value;
+                    if(str1.includes(str2))
+                        document.getElementById("result").innerHTML="Found !";
+                    else
+                    document.getElementById("result").innerHTML="Not Found";
+                }
+                if(document.getElementById("upper").checked==true) {
+                    var str1=document.getElementById("str").value;
+                    document.getElementById("result").innerHTML=str1.toUpperCase();
+                }
+                if(document.getElementById("lower").checked==true) {
+                    var str1=document.getElementById("str").value;
+                    document.getElementById("result").innerHTML=str1.toLowerCase();
+                }
+                if(document.getElementById("trim").checked==true) {
+                    var str1=document.getElementById("str").value;
+                    document.getElementById("result").innerHTML=str1.trim();
+                }
+                if(document.getElementById("con").checked==true) {
+                    var str1=document.getElementById("str").value;
+                    var str2=document.getElementById("substr").value;
+                    document.getElementById("result").innerHTML=str1.concat(str2);
+                }
+                if(document.getElementById("replace").checked==true) {
+                    var str1=document.getElementById("str").value;
+                    var str2=document.getElementById("substr").value;
+                    var str3=document.getElementById("rstr").value;
+                    document.getElementById("result").innerHTML=str1.replace(str2,str3);
+                }
+            }
+        </script>
+    </head>
+<body>
+    <fieldset>
+        <br>Enter String :
+        <input type="text" id="str"><br><br>
+        Enter Sub String :
+        <input type="text" id="substr"><br><br>
+        Replace with String :
+        <input type="text" id="rstr"><br><br>
+        <table cellspacing="10">
+            <tr>
+                <td><input type="radio" id="search" name="r1">Search substring in main String</td>
+                <td><input type="radio" id="upper" name="r1">To Uppercase</td>
+                <td><input type="radio" id="lower" name="r1">To Lower Case</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="trim" name="r1">Trim spaces</td>
+                <td><input type="radio" id="con" name="r1">Concatenate</td>
+                <td><input type="radio" id="replace" name="r1">Replace</td>
+            </tr>
+            <tr><td><input type="button" value="Submit Query" onclick="submit()"></td></tr>
+            <tr><td id="result"></td></tr>
+        </table>
+    </fieldset>
+<script>
+</script>
+</body>
+</html>

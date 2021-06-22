@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!-- Problem 6a-->
+    <form>
+        <table size="50%">
+            <tr>
+                <td>
+                    <fieldset align="left">
+                        <legend><b>Create a Profile</b></legend>
+                        First Name:<br> <input type="text" name="name"><br>
+                        Last Name:<br> <input type="text" name="name"><br>
+                        Date of Birth:<br> <input type="date" name="dob"><br>
+                        Gender: <input type="radio" name="Gender" value="Male">Male
+                        <input type="radio" name="Gender" value="Female">Female<br><br>
+                        <input type="button" value="Create profile">
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <br>
+    <!-- Problem 6b-->
+    <form>
+        <table border="2">
+            <tr>
+                <th bgcolor="mediumpurple">Name</th>
+                <th bgcolor="mediumpurple">Value</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Sex</td>
+                <td><input type="radio" name="gender">Male<br>
+                    <input type="radio" name="gender">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Eye Color</td>
+                <td>
+                    <select name="eyecol">
+                        <option>green</option>
+                        <option>blue</option>
+                        <option>black</option>
+                        <option>brown</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Check all that apply</td>
+                <td>
+                    <input type="checkbox">Over 6 feet tall<br>
+                    <input type="checkbox">Over 200 pounds
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Describe your athletic ability:<br>
+                    <textarea rows=4 cols=40></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" name="" value="Enter my information"></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    </br>
+    <!-- Problem 6c-->
+    <form>
+        <table size="50%" border="2" cellspacing="0" bgcolor="pink">
+            <tr>
+                <td>Name</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Employee Code</td>
+                <td><input type="text" size="3"></td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td><input type="radio" value="dept" name="dept">ADMIN<br>
+                    <input type="radio" value="dept" name="dept">HR<br>
+                    <input type="radio" value="dept" name="dept">TECHNICAL<br>
+                    <input type="radio" value="dept" name="dept">ACCOUNTS<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Joining</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><input type="text" size="1" name="doj" maxlength="2"></td>
+                            <td>/</td>
+                            <td><input type="text" size="1" name="doj" maxlength="2"></td>
+                            <td>/</td>
+                            <td><input type="text" size="2" name="doj"maxlength="4"></td>
+                        </tr>
+                        <tr>
+                            <td>dd</td>
+                            <td></td>
+                            <td>mm</td>
+                            <td></td>
+                            <td>yyyy</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea cols="50" rows="4" style="resize:none; overflow-y:scroll"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Training programs Attended</td>
+                <td>
+                    <input type="checkbox">HTML/DHTML<br>
+                    <input type="checkbox">JAVA<br>
+                    <input type="checkbox">CLIENT/SERVER<br>
+                    <input type="checkbox">.NET<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Training Programmes need to attend</td>
+                <td>
+                    <select name="trng" multiple size="2">
+                        <option>JAVASCRIPT</option>
+                        <option>JSTRUTS</option>
+                        <option>SERVELET</option>
+                        <option>DJANGO</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Send the information at</td>
+                <td><a href="">empinfo@patni.com</a></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <br>
+    <!-- Problem 6d-->
+    <form>
+        <h2>Internet Usage Survey</h2><br>
+        <p align="left">This survey is being conducted to help identify the Internet usage patterns of our
+            customers.<br>
+            Please take a few moments to complete and submit this short form. Thank you for your cooperation.
+        </p>
+        <table width="70%">
+            <tr>
+                <td>What type of Internet connection do you have?<br>(Select One)</td>
+                <td>
+                    <select value="typ" multi size="4">
+                        <option>Dial-up</option>
+                        <option>DSL</option>
+                        <option selected>High Speed Cable</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>What type of computer do you use most at home?</td>
+                <td><input type="radio" name="comp" value="comp">Desktop
+                    <input type="radio" name="comp" value="comp">Laptop
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>How would you describe your main reason for using the internet?</td>
+                <td>
+                    <input type="radio" name="reas" value="reason">To do work-related activities<br>
+                    <input type="radio" name="reas" value="reason">To do school-related activities<br>
+                    <input type="radio" name="reas" value="reason">For entertainment purposes<br>
+                    <input type="radio" name="reas" value="reason">Other activities
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Types of sites visited</legend>
+                        What types of web sites do you access most often?<br>
+                        Check all that apply:<br>
+                        <input type="checkbox">Self Improvement<br>
+                        <input type="checkbox">Entertainment<br>
+                        <input type="checkbox">News and Sports<br>
+                        <input type="checkbox">Reference<br>
+                        <input type="checkbox">Email
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>Time spent using Internet</legend>
+                        <br>
+                        During an average week, how long do you spend online?<br>
+                        <input type="radio" name="spnt">0-3 Hours<br>
+                        <input type="radio" name="spnt">4-6 Hours<br>
+                        <input type="radio" name="spnt">7-10 Hours<br>
+                        <input type="radio" name="spnt">11-14 Hours<br>
+                        <input type="radio" name="spnt">15+ Hours
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Please comment on your opinions concerning Internet privacy and safety.<br>
+                    <textarea rows="5" cols="100"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td>
+                    First Name: <input type="text" maxlength="25" size="40">
+                    <br>
+                    <br>
+                    Age: <input type="number" min="1" max="100" size="2">
+                </td>
+                <td>
+                    Last Name: <input type="text" maxlength="15" size="40">
+                    <br>
+                    <br>
+                    Zip Code: <input type="number" size="3">
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <input type="button" value="Click to Submit">
+                    &nbsp;&nbsp;
+                </td>
+                <td align="left">
+                    &nbsp;&nbsp;
+                    <input type="reset" value="Clear Form">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

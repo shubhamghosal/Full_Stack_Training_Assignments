@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script
+        src="F:\CDAC Course\4th MODULE = Web Programming Technologies\Script Libraries (jQuery)\jQuery\jquery-3.6.0.min.js">
+        </script>
+    <script>
+        $(document).ready(function () {
+            $("ul li").each(function(index) {
+                $(this).prepend(index + ": " );
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li class="fruit">Apple</li>
+        <li class="fruit">Kiwi</li>
+        <li class="fruit">Strawberry</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: royalblue;
+            color: white;
+        }
+
+        .alignlabel {
+            text-align: right;
+            padding-bottom: 20px;
+            padding-right: 20px;
+        }
+
+        .aligninput {
+            text-align: left;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend><b>Registration Details</b></legend>
+            <table align="center">
+                <tr>
+                    <td class="alignlabel">University: </td>
+                    <td class="aligninput"><input type="text" size="40%"></td>
+                </tr>
+                <tr>
+                    <td class="alignlabel">Institute:</td>
+                    <td class="aligninput"><input type="text" size="40%"></td>
+                </tr>
+                <tr>
+                    <td class="alignlabel">Branch:</td>
+                    <td class="aligninput">
+                        <select style="width:150px">
+                            <option>--select--</option>
+                            <option>Electronics</option>
+                            <option>Mecahnical</option>
+                            <option>Electrical</option>
+                            <option>Civil</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alignlabel">Degree:</td>
+                    <td class="aligninput">
+                        <select>
+                            <option>--select--</option>
+                            <option>B.Tech</option>
+                            <option>BE</option>
+                            <option>M.Tech</option>
+                            <option>MS</option>
+                        </select>
+                        <input type="radio" name="deg">Pursuing
+                        <input type="radio" name="deg">Completed
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+
+</html>

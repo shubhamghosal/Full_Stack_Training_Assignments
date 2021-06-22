@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function compoundInterest(p, r, t, n) {
+            var amount = p * Math.pow(1 + (r / 100 * n), n * t);
+            var cinterest = amount - p;
+            document.write("Compound Interest after " + t + " year/s: Rs." + cinterest);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>--------------------------------------------</h2>
+    <h3>*******COMPOUND INTEREST*******</h2>
+        <h2>--------------------------------------------</h2>
+        <script>
+            var principal = parseInt(prompt('Enter the principal amount '));
+            var rate = parseInt(prompt('Enter the rate '));
+            var time = parseInt(prompt('Enter the time '));
+            var comp = parseInt(prompt('Enter number of times it is compounded anually '));
+            document.write("Principal - Rs." + principal + "<br>");
+            document.write("Rate - " + rate + "% <br>");
+            document.write("Time - " + time + " yr <br>");
+            compoundInterest(principal, rate, time, comp);
+        </script>
+</body>
+
+</html>

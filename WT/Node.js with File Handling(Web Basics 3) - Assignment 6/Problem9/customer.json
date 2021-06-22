@@ -1,0 +1,25 @@
+{
+    "customer": [
+        {
+            "cusname": "Ravi Kumar",
+            "address": "Delhi, India",
+            "ph": 8888799990,
+            "email": "rkumar@gmail.com",
+            "cred_rate": 8.9
+        },
+        {
+            "cusname": "Suman Chand",
+            "address": "Mumbai, India",
+            "ph": 7788799990,
+            "email": "schand@gmail.com",
+            "cred_rate": 7.9
+        },
+        {
+            "cusname": "Bishal Jana",
+            "address": "Kolkata, India",
+            "ph": 8888799444,
+            "email": "bjana@gmail.com",
+            "cred_rate": 9.9
+        }
+    ]
+}

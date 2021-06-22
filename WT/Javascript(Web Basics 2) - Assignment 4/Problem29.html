@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        fieldset {
+            border-color: blue;
+            width: 50%;
+            text-align: center;
+            background-color: gainsboro;
+            margin: auto;
+        }
+    </style>
+    <script>
+        function validateCalculator() {
+            var amt = document.getElementById("amount").value;
+            var rt = document.getElementById("rate").value;
+            var repay = document.getElementById("year").value;
+            if (amt > 1500000) {
+                alert("Amount should be less than 15 lakhs");
+                document.getElementById("amount").select();
+                document.getElementById("amount").style.outline = "thin solid red";
+                return false;
+            }
+            else if (amt == isNaN || amt == "") {
+                alert("Invalid/Input missing");
+                document.getElementById("amount").focus();
+                document.getElementById("amount").style.outline = "thin solid red";
+                return false;
+            }
+            if (repay < 7 || repay > 15) {
+                alert("Repayment period should be between 7 to 15 years")
+                document.getElementById("year").select();
+                return false;
+            }
+            else if (repay == isNaN || repay == "") {
+                alert("Invalid/Input missing");
+                document.getElementById("year").focus();
+                return false;
+            }
+            else {
+                var compoundInterest = amt * Math.pow((1 + (rt / 100)), repay);
+                document.getElementById("monpay").value = Math.round(compoundInterest / (12 * repay));
+                document.getElementById("totpay").value = Math.round(compoundInterest);
+                document.getElementById("totint").value = Math.round(compoundInterest - amt);
+                return true;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <fieldset>
+        <form id="form1">
+            <h3>Enter Loan Information:</h3>
+            <div>1) Amount of the loan (any currency)*: <input type="number" id="amount"></div><br>
+            <div>2) Annual percentage rate of interest*: <input type="number" id="rate"></div><br>
+            <div>3) Repayment period in years*: <input type="number" id="year"></div><br>
+            <div><input type="button" value="Compute" onclick="validateCalculator()"></div>
+            <h3>Payment Information:</h3>
+            <div>4) Your monthly payment will be: <input type="text" id="monpay" readonly></div><br>
+            <div>5) Your total payment will be: <input type="text" id="totpay" readonly> </div><br>
+            <div>6) Your total interest payments will be: <input type="text" id="totint" readonly></div><br>
+        </form>
+    </fieldset>
+</body>
+
+</html>

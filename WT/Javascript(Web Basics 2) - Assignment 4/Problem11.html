@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function fibo(n) {
+            if (n <= 1) {
+                return n;
+            }
+            return fibo(n - 1) + fibo(n - 2);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt('Enter the number of terms: '));
+        document.write("Fibonacci Series:<br>");
+        for (i = 0; i < num; i++) {
+            document.write(fibo(i) + " ");
+        }
+    </script>
+</body>
+
+</html>

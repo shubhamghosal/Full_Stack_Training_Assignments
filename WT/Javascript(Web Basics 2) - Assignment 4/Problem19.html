@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function Employee(empid, name, salary) {
+            this.empid = empid;
+            this.name = name;
+            this.salary = salary;
+            this.getEmpDetails = function () {
+                return {
+                    id: this.empid,
+                    name: this.name,
+                    salary: this.salary
+                }
+            }
+        }
+        let empList = [];
+        const getTable = list => {
+            if (list.length == 0) return "";
+            let table = `
+<table border="2" cellpadding="5" width="70">
+                <tr>
+                    <th>ID.</th>
+                    <th>Name</th>
+                    <th>Salary (USD)</th>
+                </tr>
+          `;
+            list.forEach(emp => {
+                table += `
+              <tr>
+                <td>${emp.empid}</td>
+                <td>${emp.name}</td>
+                <td>${emp.salary}</td>
+              </tr>
+            `;
+            })
+            table += "</table>";
+            return table;
+        };
+
+    </script>
+</head>
+
+<body>
+    <script>
+        let id = prompt("Enter Employee ID");
+        let name = prompt("Enter Employee Name");
+        let salary = prompt("Enter Employee Salary");
+        empList.push(new Employee(id, name, salary));
+        document.write(getTable(empList));
+    </script>
+</body>
+
+</html>

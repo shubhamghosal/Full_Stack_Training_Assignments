@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        const Rectangle = function (length, breadth) {
+            this.length = length;
+            this.breadth = breadth;
+            this.area = function () {
+                return this.length * this.breadth;
+            }
+            this.perimeter = function () {
+                return 2 * (this.length + this.breadth);
+            }
+        };
+        const Circle = function (radius) {
+            this.radius = radius;
+            this.area = function () {
+                return Math.round(this.radius * this.radius * Math.PI);
+            }
+            this.circumference = function () {
+                return Math.round(2 * this.radius * Math.PI);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let length = parseInt(prompt("Enter the length of rectangle."));
+        let breadth = parseInt(prompt("Enter the breadth of rectangle."));
+        let radius = parseInt(prompt("Enter the radius of circle."));
+        var rect = new Rectangle(length, breadth);
+        var circle = new Circle(radius);
+        document.write("<b>"+"Length & Breadth of Rectangle is "+length+" and " +breadth+"</b>"+"<br>");
+        document.write("Area of rectangle for : " +rect.area()+"<br>");
+        document.write("Perimeter of rectangle : " +rect.perimeter()+"<br>");
+        document.write("<b>"+"Radius of Circle is "+radius+"</b>"+"<br>")
+        document.write("Area of circle : " +circle.area()+"<br>");
+        document.write("Circumference of circle : " +circle.circumference()+"<br>");
+    </script>
+</body>
+
+</html>

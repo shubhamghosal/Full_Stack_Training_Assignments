@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var sum=0;
+        var flag=1;
+        function sumSquare(n) {
+            for(i=1; i<=n; i++){
+            if (i % 2 == 0) {
+                flag=i*i;
+                sum=sum+flag;
+            }
+        } 
+        return sum;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt("Enter the total number of inputs."));
+        document.write("The sum of squares upto "+num+" terms is "+sumSquare(num));
+    </script>
+</body>
+
+</html>

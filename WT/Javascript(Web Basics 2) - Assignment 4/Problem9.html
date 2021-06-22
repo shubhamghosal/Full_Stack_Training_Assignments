@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var sum=0;
+        function sumAvg(arr1, n) {
+            for (i = 0; i < n; i++) {
+                sum = sum + arr1[i];
+            }
+            document.write("The sum is "+sum+"<br>");
+            var avg = sum/n;
+            document.write("The average is "+avg);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt("Enter the number of parameters."));
+        var arr = new Array(num);
+        for (i = 0; i < num; i++) {
+            arr[i] = parseInt(prompt("Enter the " + (i + 1) + " numbers."));
+        }
+        sumAvg(arr, num);
+    </script>
+</body>
+
+</html>

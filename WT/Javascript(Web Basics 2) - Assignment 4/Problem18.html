@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function revName() {
+            for (i = 1; i <= names.length; i++) {
+                names[i] = names[i].split(" ").map(name => name.split("").reverse().join("")).sort();
+                let result = "";
+                names[i].forEach(name => result += `${name}<br/>`);
+                document.write(result + "<br>");
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <script>
+        let names = [];
+        for (i = 1; i <= 5; i++) {
+            names[i] = prompt("Enter the " + i + "no name.")
+        }
+        revName(names);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function numSearch() {
+                var arr = ['2', '4', '9', '17', '23', '25', '49'];
+                for(i=0; i<arr.length; i++){
+                    if(num == arr[i]){
+                        document.write("BINGO")
+                        break;
+                    }
+                    else if ((arr.length-1) == i){
+                        document.write("Input Not Found");
+                    }
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var num = parseInt(prompt("Enter a number within 1 to 50 range."));
+            numSearch(num);
+        </script>
+    </body>
+</html>

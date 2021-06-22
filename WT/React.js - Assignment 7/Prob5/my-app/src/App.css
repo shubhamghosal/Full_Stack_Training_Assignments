@@ -1,0 +1,12 @@
+.App {
+  border:5px solid black;
+    width: 400px;
+    margin: auto;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: left;
+    padding: 20px;
+    margin-top: 20px;
+}
+h1 {
+  text-align: center;
+}

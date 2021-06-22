@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var flag=1;
+            function pow(x, y){
+                for(i=1; i<=y; i++){
+                    flag = flag*x;
+                }
+                return flag;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var x = parseInt(prompt("Enter the number"));
+            var y = parseInt(prompt("Enter power of the number"));
+            document.write("Power of "+x+"^"+y+" is "+"<b>"+pow(x,y)+"</b>");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Solution 4</title>
+    <script>
+        var sum = 0;
+        function sumDigit(n) {
+            while (n) {
+                sum += n % 10;
+                n = Math.floor(n / 10);
+            }
+            return sum;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var num1 = parseInt(prompt('Enter the five digit number'));
+        document.write("The sum is " + sumDigit(num1));
+    </script>
+</body>
+
+</html>

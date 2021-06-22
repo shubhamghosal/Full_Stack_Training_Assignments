@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        const getSumAndMean = nums => {
+            const sum = nums.reduce((a, b) => a + b);
+            return {
+                sum,
+                avg: sum / nums.length
+            };
+        };
+        const squaresOfNums = nums => nums.map(num => num * num);
+        let numbers = prompt("Enter the numbers to perform(space separated)")
+        numbers = numbers.split(" ").map(num => parseInt(num));
+        let squares = squaresOfNums(numbers);
+        const result = getSumAndMean(numbers);
+        document.write(`Sum of numbers : ${result.sum}<br/>Average of numbers : ${result.avg}<br/>Square of numbers : ${squares.join(", ")}`)
+    </script>
+</body>
+
+</html>

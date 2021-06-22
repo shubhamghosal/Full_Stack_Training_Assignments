@@ -1,0 +1,23 @@
+.news{
+    border:2px solid black;
+    width: 650px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+    border-radius: 5px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+a :hover {
+    background-color: yellow;
+}
+header, section {
+    text-align: left;
+    padding-right: 5px;
+}
+
+img {
+    width: 150px;
+    float: right;
+    border-radius: 10px;
+}

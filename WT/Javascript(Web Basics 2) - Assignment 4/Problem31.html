@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        fieldset {
+            width: 50%;
+            border-color: blue;
+            background-color: beige;
+            margin: auto;
+        }
+
+        table {
+            margin: auto;
+
+        }
+    </style>
+    <script>
+        function dataCheck() {
+            var name = document.getElementById("name").value;
+            var birth = document.getElementById("birth").value;
+            var email = document.getElementById("email").value;
+            var lucky = document.getElementById("lucky").value;
+            var pizza = document.getElementById("check1");
+            var pasta = document.getElementById("check2");
+            var chinese = document.getElementById("check3");
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value)) {
+                if (lucky <= 1 || lucky >= 100) {
+                    alert("Lucky number should be between 1 to 100!");
+                    document.getElementById("lucky").select();
+                    return false;
+                }
+                else {
+                    var Object = {
+                        Name: name, Birth: birth, Email: email, Lucky: lucky,
+                    };
+                    var newTab = window.open("", "", "width=600,height=600");
+                    newTab.document.write("<h2>You entered</h2>");
+                    newTab.document.write("<table border=2 cellspacing=0><tr><td><b> Name: </b> </td>" + "<td>" + Object.Name + "</td></tr>");
+                    newTab.document.write("<tr><td><b> Birth Date: </b> </td>" + "<td>" + Object.Birth + "</td></tr>");
+                    newTab.document.write("<tr><td><b> Email Address: </b> </td>" + "<td>" + Object.Email + "</td></tr>");
+                    if (document.getElementById("male").checked == true) {
+                        newTab.document.write("<tr><td><b> Gender: </b> </td>" + "<td>Male</td></tr>");
+                    }
+                    else if (document.getElementById("female").checked == true) {
+                        newTab.document.write("<tr><td><b> Gender: </b> </td>" + "<td>Female</td></tr>");
+                    }
+                    newTab.document.write("<tr><td><b> Lucky Number: </b> </td>" + "<td>" + Object.Lucky + "</td></tr>");
+                    newTab.document.write("<tr><td><b> Favorite Food: </b> </td><td>");
+                    if (pizza.checked == true) {
+                        newTab.document.write(pizza.value);
+                    }
+                    if (pasta.checked == true) {
+                        newTab.document.write(", " + pasta.value);
+                    }
+                    if (chinese.checked == true) {
+                        newTab.document.write(", " + chinese.value);
+                    }
+                    newTab.document.write("</td></tr></table>");
+                    return true;
+                }
+
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                document.getElementById("email").select();
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <fieldset>
+        <form id="myForm">
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Birth Date:</td>
+                    <td> <input type="date" name="birth" id="birth"></td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td> <input type="email" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Gender: </td>
+                    <td> <input type="radio" name="gender" id="male">Male<br>
+                        <input type="radio" name="gender" id="female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lucky Number:</td>
+                    <td><input type="number" name="lucky" id="lucky"></td>
+                </tr>
+                <tr>
+                    <td>Favorite Foods: </td>
+                    <td><input type="checkbox" id="check1" value="Pizza"> Pizza<br>
+                        <input type="checkbox" id="check2" value="Pasta">Pasta<br>
+                        <input type="checkbox" id="check3" value="Chinese">Chinese<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Send Data" onclick="dataCheck()"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+
+</html>

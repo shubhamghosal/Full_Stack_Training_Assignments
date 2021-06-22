@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        fieldset {
+            width: 50%;
+            background-color: aquamarine;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+    <script>
+        function displayMember() {
+            var dis = "";
+            var arr = ['John', 'Steve', 'Ben', 'Damon', 'Ian'];
+            var res = arr.join(",").toUpperCase();
+            document.getElementById("result").innerHTML = "<b>Members of my Group are</b><br> " + res;
+            if (document.getElementById("content").checked == true) {
+                for (i = 0; i <= arr.length - 1; i++) {
+                    dis += arr[i] + ",";
+                    document.getElementById("result2").innerHTML = dis;
+                }
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <form>
+            <div>Click the button to display the array values as a string delimited by comma in uppercase.</div><br>
+            <div><input type="button" value="Try It" onclick="displayMember()"></div>
+            <div>Check Array Contents<input type="radio" id="content" name="r1"></div>
+            <div id="result"></div>
+            <div id="result2"></div>
+        </form>
+    </fieldset>
+</body>
+
+</html>

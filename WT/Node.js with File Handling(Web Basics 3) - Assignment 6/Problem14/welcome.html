@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("./168595-space-stars.jpg");
+            text-align: center;
+            color: white;
+        }
+
+        fieldset {
+            margin: auto;
+            width: 40%;
+            border-width: 10px;
+            border-color: blue;
+            background-color: black;
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function fetchData() {
+            var xmlhttp = new XMLHttpRequest()
+            xmlhttp.open('GET', "http://127.0.0.1:1337/greet", true)
+            xmlhttp.setRequestHeader("Accept", "text/html")
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    document.getElementById("div1").innerHTML += this.responseText
+                }
+            }
+            xmlhttp.send()
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Welcome to Node based Web Application</h1>
+    <fieldset>
+        <h3>Click below to get a surprise greeting message.</h3>
+        <button onclick="fetchData()">Click</button>
+    </fieldset>
+    <div id="div1" class="div1"></div>
+</body>
+
+</html>

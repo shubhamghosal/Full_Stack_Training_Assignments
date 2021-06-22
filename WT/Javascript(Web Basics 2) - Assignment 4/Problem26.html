@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Problem26</title>
+    <style>
+        fieldset {
+            width: 50%;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        function submitDetails() {
+            var sum = 0;
+            var num = document.getElementById("num").value;
+            if (num > 1000 || num < 0) {
+                document.getElementById("result").innerHTML = "Entered number is out of range";
+            }
+            else {
+                while (num) {
+                    sum += num % 10;
+                    num = Math.floor(num / 10);
+                }
+                document.getElementById("result").innerHTML = "Sum of digits is " +sum;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <form>
+            <div>Enter a +ve no less than 1000: <input type="text" name="num" id="num"></div><br>
+            <input type="button" value="Submit" onclick="submitDetails()"><br>
+            <div id="result"></div>
+        </form>
+    </fieldset>
+</body>
+
+</html>
