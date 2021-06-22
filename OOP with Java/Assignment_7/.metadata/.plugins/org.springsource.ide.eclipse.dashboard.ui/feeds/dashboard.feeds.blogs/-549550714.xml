@@ -5,45 +5,7 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-06-21T17:00:00Z</updated>
-  <entry>
-    <title>Spring Tools 4.11.0 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/06/21/spring-tools-4-11-0-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2021-06-21:4472</id>
-    <updated>2021-06-21T17:00:00Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;I am happy to announce the 4.11.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;&lt;h4&gt;&lt;a href="#major-changes-to-the-spring-tools-4-for-eclipse-distribution" class="anchor" name="major-changes-to-the-spring-tools-4-for-eclipse-distribution"&gt;&lt;/a&gt;major changes to the Spring Tools 4 for Eclipse distribution&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;updated to Eclipse 2021-06 release (including support for Java 16) (&lt;a href="https://www.eclipse.org/eclipseide/2021-06/"&gt;new and noteworthy&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;early-access builds for Apple Silicon platform (ARM M1) available&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;&lt;a href="#reminder" class="anchor" name="reminder"&gt;&lt;/a&gt;reminder&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;the Eclipse-based distribution of the Spring Tools 4 requires a JDK11 (or newer) to run on&lt;/li&gt;
-  &lt;li&gt;the Eclipse-based distribution ships with an embedded JDK16 runtime, no need to install or configure a specific JDK to run the IDE on anymore&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;&lt;a href="#additional-highlights" class="anchor" name="additional-highlights"&gt;&lt;/a&gt;additional highlights&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;(VS Code, Spring Boot)&lt;/em&gt; new: new walkthrough contribution to get started with Spring Boot in VS Code&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(VS Code, Spring Boot)&lt;/em&gt; fixed: not work when change LightWeight mode to Standard (&lt;a href="https://github.com/spring-projects/sts4/issues/628"&gt;#628&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(VS Code, Spring Boot)&lt;/em&gt; fixed: language server processes doesn&amp;rsquo;t get shutdown properly in VSCode (&lt;a href="https://github.com/spring-projects/sts4/issues/636"&gt;#636&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(VS Code, Spring Boot)&lt;/em&gt; fixed: VSCode extension JDK version (&lt;a href="https://github.com/spring-projects/sts4/issues/612"&gt;#612&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: Boot Dash: flexible and configurable filters (&lt;a href="https://github.com/spring-projects/sts4/issues/614"&gt;#614&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: hide projects without a main class from boot dashboard automatically (&lt;a href="https://github.com/spring-projects/sts4/issues/605"&gt;#605&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; improvement: VSCode extension doesn&amp;rsquo;t understand glob patterns in group config (&lt;a href="https://github.com/spring-projects/sts4/issues/639"&gt;#639&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; improvement: Step and properties not recognized (&lt;a href="https://github.com/spring-projects/sts4/issues/633"&gt;#633&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2021-06-18-4110-release-incl-language-servers-version-1260"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2021-06-18-4110-release-incl-language-servers-version-1260&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Spring Tools 4.11.1 is scheduled to be released in early August 2021.&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
+  <updated>2021-06-17T11:00:00Z</updated>
   <entry>
     <title>A Bootiful Podcast: Azure Developer Advocate Rory Preddy on Spring, Java, Azure Spring Cloud and more</title>
     <link rel="alternate" href="https://spring.io/blog/2021/06/17/a-bootiful-podcast-azure-developer-advocate-rory-preddy-on-spring-java-azure-spring-cloud-and-more" />
@@ -802,6 +764,44 @@ dependencies {&#xD;
     <updated>2021-05-20T19:00:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Google Cloud Developer Advocate (and mentor, and friend!) &lt;a href="http://twitter.com/_JamesWard"&gt;James Ward (@_JamesWard)&lt;/a&gt; about his podcast &lt;a href="https://twitter.com/HappyPathProg"&gt;&lt;em&gt;Happy Path Programming&lt;/em&gt; (@HappyPathProg)&lt;/a&gt;, programming, software, Spring Native, and his work at various organizations like Adobe, Heroku, Lightbend, SalesForce, and now Google Cloud.&lt;/p&gt;
 &lt;iframe title="James Ward" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=qrcfb-10412f6-pb&amp;from=pb6admin&amp;download=1&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;btn-skin=7"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Integration for AWS 2.5 goes GA</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/05/20/spring-integration-for-aws-2-5-goes-ga" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2021-05-20:4450</id>
+    <updated>2021-05-20T16:25:43Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring (and AWS) Community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Today it&amp;#8217;s my pleasure to announce a release of Spring Integration for Amazon Web Services extension version &lt;code&gt;2.5&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It is available from Maven Central:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-aws:2.5.0"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Mostly this version is a major move from Spring Cloud for AWS project hosted on Spring Cloud side to its own &lt;a href="https://awspring.io/"&gt;organization&lt;/a&gt;.
+Plus it includes upgrades to the latest dependencies, including recently released Spring Integration &lt;a href="https://spring.io/blog/2021/05/19/spring-integration-5-5-goes-ga"&gt;5.5&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Many thanks to everyone from the Community for all the feedback and contribution to this project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration for AWS resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
