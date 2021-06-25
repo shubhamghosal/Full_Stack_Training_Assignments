@@ -9,7 +9,7 @@ public class GrowableStack implements Stack {
 	public void push(Employee emp) {
 		if (top!=stack.length-1)
 			stack[++top] = emp;
-		else { // Upon stack full
+		else {
 			Employee[] temp = stack;
 			stack = new Employee[stack.length*2];
 			for (int i=0; i<=top; i++)

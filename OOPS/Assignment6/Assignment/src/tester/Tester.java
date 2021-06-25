@@ -48,7 +48,7 @@ public class Tester {
 					System.out.println("Stack is empty!");
 				break;
 			case 5:
-				System.out.println("Exited");
+				System.out.println("Exit");
 				in.close();
 				return;
 			default:
