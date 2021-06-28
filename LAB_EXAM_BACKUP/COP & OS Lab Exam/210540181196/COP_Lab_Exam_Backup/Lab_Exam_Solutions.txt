@@ -1,0 +1,129 @@
+********COP LAB EXAM SOLUTION*********
+Name: Shubham Ghosal
+Course: e-DAC
+PRN: 210540181196
+***************************************
+Question1
+Code:
+
+import java.util.Scanner;
+
+public class Sphere {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+
+		System.out.print("Enter the radius of the sphere: ");
+		double rad = in.nextDouble();
+
+		Calculate obj = new Calculate(rad);
+		obj.Volume();
+		obj.surfaceArea();
+
+		in.close();
+	}
+
+}
+
+class Calculate {
+	double radius;
+
+// Using constructor Calculate to set radius
+	public Calculate(double r) {
+
+		radius = r;
+	}
+
+// Calculating volume of sphere
+	void Volume() {
+		double vol = ((double) 4 / (double) 3) * (Math.PI * radius * radius * radius);
+		System.out.println("Volume Of the Sphere :" + vol);
+	}
+
+// Calculating surface area of sphere
+	void surfaceArea() {
+		double sur = 4 * Math.PI * radius * radius;
+		System.out.println("Surface Area Of the Sphere :" + sur);
+	}
+
+}
+
+Output:
+
+Enter the radius of the sphere: 5
+Volume Of the Sphere :523.5987755982989
+Surface Area Of the Sphere :314.1592653589793
+
+-------------------------------------------------------------
+Question 2
+Code:
+import java.util.Scanner;
+public class PatternCode {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter number of rows to print ");
+
+        int row = in.nextInt();
+
+        System.out.println("The Pattern is as follows:");
+
+        for (int i = row; i >= 1; i--)
+        {
+            for (int j = i; j >= 1; j--)
+            {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+      in.close();
+	}
+
+}
+
+Output:
+Enter number of rows to print: 7
+The Pattern is as follows:
+7 6 5 4 3 2 1 
+6 5 4 3 2 1 
+5 4 3 2 1 
+4 3 2 1 
+3 2 1 
+2 1 
+1 
+
+-------------------------------------------------------------
+Question 3
+Code:
+import java.util.Scanner;
+public class UniqueArray {
+	public static void main(String[] args) {
+		int i,j;
+		Scanner in = new Scanner(System.in);
+		System.out.print("Enter number of elements of the array: ");
+		int num = in.nextInt();
+		int arr[]=new int[num];
+		System.out.print("Enter elements of the array: ");
+		for(i=0; i<num; i++) {
+			arr[i] = in.nextInt();
+			}
+		System.out.print("The unique elements of the array are: [");
+	      for (i = 0; i < num; i++) {
+	         for (j = 0; j < i; j++)
+	         if (arr[i] == arr[j])
+	            break;
+	         if (i == j)
+	         System.out.print(arr[i] +" ");
+	      }
+	      System.out.print("]");
+	
+			in.close();
+	}
+}
+
+Output:
+Enter number of elements of the array: 7
+Enter elements of the array: 1 2 3 2 3 3 4
+The unique elements of the array are: [1 2 3 4 ]
+

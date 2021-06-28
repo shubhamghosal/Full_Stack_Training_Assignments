@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question 1 - Lab Exam</title>
+    <!-- Bootstrap CSS Imports -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- CSS Design-->
+    <style>
+        label {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        div {
+            border: 5px solid black;
+            width: 700px;
+            margin: auto;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            text-align: left;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: antiquewhite;
+        }
+    </style>
+    <!-- Javascript Validations -->
+    <script>
+        // Checking to validate email equality
+        const emailvalidate = () => {
+            var email = document.getElementById("email").value;
+            var cnfemail = document.getElementById("cnfemail").value;
+            if (email != cnfemail) {
+                document.getElementById("emailres2").innerHTML = "Email must be same";
+                document.getElementById("emailres2").style.color = "red";
+            }
+            else if (email == cnfemail) {
+                document.getElementById("emailres2").innerHTML = " ";
+            }
+        }
+        // Checking to validate email format and input fields mandatory
+        const validate = () => {
+            var title = document.getElementById("title").value;
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var cnfemail = document.getElementById("cnfemail").value;
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form1.email.value)) {
+                if (fname == "" || lname == "" || email == "" || cnfemail == "") {
+                    alert("All Input Text Fields are mandatory");
+                }
+                else {
+                    document.getElementById("result").innerHTML = "All data entered correctly";
+                }
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                document.getElementById("email").select();
+            }
+
+        }
+        // Calculating the value of training cost as per table given
+        const calculate = () => {
+            var semi = document.getElementById("semi").value;
+            var intro = document.getElementById("intro");
+            var inter = document.getElementById("inter");
+            var adv = document.getElementById("adv");
+
+            if (intro.checked == true) {
+                if (semi == "SOA") {
+                    document.getElementById("cost").value = 2500;
+                }
+                else if (semi == "Design Patterns") {
+                    document.getElementById("cost").value = 4000;
+                }
+                else if (semi == "Business Intelligence") {
+                    document.getElementById("cost").value = 5000;
+                }
+            }
+            else if (inter.checked == true) {
+                if (semi == "SOA") {
+                    document.getElementById("cost").value = 3500;
+                }
+                else if (semi == "Design Patterns") {
+                    document.getElementById("cost").value = 5500;
+                }
+                else if (semi == "Business Intelligence") {
+                    document.getElementById("cost").value = 7000;
+                }
+            }
+            else if (adv.checked == true) {
+                if (semi == "SOA") {
+                    document.getElementById("cost").value = 6000;
+                }
+                else if (semi == "Design Patterns") {
+                    document.getElementById("cost").value = 8000;
+                }
+                else if (semi == "Business Intelligence") {
+                    document.getElementById("cost").value = 10000;
+                }
+            }
+        }
+        // Displaying Details in a new window
+        const display = () => {
+            var title = document.getElementById("title").value;
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var semi = document.getElementById("semi").value;
+
+            var newTab = window.open("", "", "width=400,height=400");
+            newTab.document.write("<table border=2 cellspacing=0><tr><td><b> Name: </b> </td>" + "<td>" + title + ". " + fname + " " + lname + "</td></tr>");
+            newTab.document.write("<tr><td><b> Email: </b> </td>" + "<td>" + email + "</td></tr>");
+            newTab.document.write("<tr><td><b> Seminar: </b> </td>" + "<td>" + semi + "</td></tr></table>");
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1><i class="fa fa-user"></i><u> Seminar Registration Form</u></h1>
+        <form id="form1">
+            <label for="title">Participant name: </label>
+            <select name="title" id="title">
+                <option value="Title">Title</option>
+                <option value="Mr">Mr.</option>
+                <option value="Mrs">Mrs.</option>
+                <option value="Ms">Ms.</option>
+                <option value="Dr">Dr.</option>
+            </select>
+            <input type="text" name="fname" id="fname" placeholder="First Name" required>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+            <br />
+            <label for="email">Email-ID: </label>
+            <input type="email" name="email" id="email" onchange=emailvalidate()>
+            <span id="emailres1"></span>
+            <br />
+            <label for="cnfemail">Confirm Emailid: </label>
+            <input type="email" name="cnfemail" id="cnfemail" onchange=emailvalidate()>
+            <span id="emailres2"></span>
+            <br />
+            <label for="semi">Seminars: </label>
+            <select name="semi" id="semi">
+                <option value="SOA">SOA</option>
+                <option value="Design Patterns">Design Patterns</option>
+                <option value="Business Intelligence">Business Intelligence</option>
+            </select>
+            <br />
+            <label for="radio">Level:</label>
+            <input type="radio" name="radio" id="intro"> Introductory
+            <input type="radio" name="radio" id="inter"> Intermediate
+            <input type="radio" name="radio" id="adv"> Advanced
+            <br />
+            <button type="button" class="btn btn-success" onclick=calculate()>Calculate Training Cost</button>
+            <br />
+            <label for="cost">Cost of Seminar: </label>
+            <input type="text" name="cost" id="cost">
+            <br />
+            <button type="button" class="btn btn-primary" id="displayInfo" onclick=display()>Display Details</button>
+            <button type="button" class="btn btn-primary" id="submit" onclick=validate()>Submit</button>
+        </form>
+        <p id="result"></p>
+    </div>
+</body>
+
+</html>

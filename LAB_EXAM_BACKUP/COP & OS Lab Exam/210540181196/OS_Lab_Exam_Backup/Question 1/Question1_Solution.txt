@@ -1,0 +1,218 @@
+Question 1 Solution:
+
+[shubham2@localhost ~]$ ps -ef 
+
+
+
+Output:
+UID         PID   PPID  C STIME TTY          TIME CMD
+root          1      0  0 03:41 ?        00:00:03 /usr/lib/systemd/systemd --swi
+root          2      0  0 03:41 ?        00:00:00 [kthreadd]
+root          4      2  0 03:41 ?        00:00:00 [kworker/0:0H]
+root          6      2  0 03:41 ?        00:00:00 [ksoftirqd/0]
+root          7      2  0 03:41 ?        00:00:00 [migration/0]
+root          8      2  0 03:41 ?        00:00:00 [rcu_bh]
+root          9      2  0 03:41 ?        00:00:01 [rcu_sched]
+root         10      2  0 03:41 ?        00:00:00 [lru-add-drain]
+root         11      2  0 03:41 ?        00:00:00 [watchdog/0]
+root         12      2  0 03:41 ?        00:00:00 [watchdog/1]
+root         13      2  0 03:41 ?        00:00:00 [migration/1]
+root         14      2  0 03:41 ?        00:00:00 [ksoftirqd/1]
+root         16      2  0 03:41 ?        00:00:00 [kworker/1:0H]
+root         18      2  0 03:41 ?        00:00:00 [kdevtmpfs]
+root         19      2  0 03:41 ?        00:00:00 [netns]
+root         20      2  0 03:41 ?        00:00:00 [khungtaskd]
+root         21      2  0 03:41 ?        00:00:00 [writeback]
+root         22      2  0 03:41 ?        00:00:00 [kintegrityd]
+root         23      2  0 03:41 ?        00:00:00 [bioset]
+root         24      2  0 03:41 ?        00:00:00 [bioset]
+root         25      2  0 03:41 ?        00:00:00 [bioset]
+root         26      2  0 03:41 ?        00:00:00 [kblockd]
+root         27      2  0 03:41 ?        00:00:00 [md]
+root         28      2  0 03:41 ?        00:00:00 [edac-poller]
+root         29      2  0 03:41 ?        00:00:00 [watchdogd]
+root         35      2  0 03:41 ?        00:00:00 [kswapd0]
+root         36      2  0 03:41 ?        00:00:00 [ksmd]
+root         37      2  0 03:41 ?        00:00:01 [khugepaged]
+root         38      2  0 03:41 ?        00:00:00 [crypto]
+root         46      2  0 03:41 ?        00:00:00 [kthrotld]
+root         48      2  0 03:41 ?        00:00:00 [kmpath_rdacd]
+root         49      2  0 03:41 ?        00:00:00 [kaluad]
+root         51      2  0 03:41 ?        00:00:00 [kpsmoused]
+root         52      2  0 03:41 ?        00:00:01 [kworker/0:2]
+root         53      2  0 03:41 ?        00:00:00 [ipv6_addrconf]
+root         66      2  0 03:41 ?        00:00:00 [deferwq]
+root        102      2  0 03:41 ?        00:00:00 [kauditd]
+root        245      2  0 03:41 ?        00:00:00 [mpt_poll_0]
+root        246      2  0 03:41 ?        00:00:00 [mpt/0]
+root        247      2  0 03:41 ?        00:00:00 [ata_sff]
+root        248      2  0 03:41 ?        00:00:00 [nfit]
+root        251      2  0 03:41 ?        00:00:00 [scsi_eh_0]
+root        253      2  0 03:41 ?        00:00:00 [scsi_tmf_0]
+root        258      2  0 03:41 ?        00:00:00 [scsi_eh_1]
+root        259      2  0 03:41 ?        00:00:00 [kworker/u256:2]
+root        260      2  0 03:41 ?        00:00:00 [scsi_tmf_1]
+root        261      2  0 03:41 ?        00:00:00 [scsi_eh_2]
+root        262      2  0 03:41 ?        00:00:00 [scsi_tmf_2]
+root        265      2  0 03:41 ?        00:00:00 [irq/16-vmwgfx]
+root        267      2  0 03:41 ?        00:00:00 [ttm_swap]
+root        284      2  0 03:41 ?        00:00:00 [kworker/1:1H]
+root        291      2  0 03:41 ?        00:00:00 [bioset]
+root        292      2  0 03:41 ?        00:00:00 [xfsalloc]
+root        293      2  0 03:41 ?        00:00:00 [xfs_mru_cache]
+root        294      2  0 03:41 ?        00:00:00 [xfs-buf/sda3]
+root        295      2  0 03:41 ?        00:00:00 [xfs-data/sda3]
+root        296      2  0 03:41 ?        00:00:00 [xfs-conv/sda3]
+root        297      2  0 03:41 ?        00:00:00 [xfs-cil/sda3]
+root        298      2  0 03:41 ?        00:00:00 [xfs-reclaim/sda]
+root        299      2  0 03:41 ?        00:00:00 [xfs-log/sda3]
+root        300      2  0 03:41 ?        00:00:00 [xfs-eofblocks/s]
+root        301      2  0 03:41 ?        00:00:00 [xfsaild/sda3]
+root        385      1  0 03:41 ?        00:00:00 /usr/lib/systemd/systemd-journ
+root        410      1  0 03:41 ?        00:00:00 /usr/sbin/lvmetad -f
+root        419      1  0 03:41 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root        469      2  0 03:41 ?        00:00:00 [xfs-buf/sda1]
+root        474      2  0 03:41 ?        00:00:00 [xfs-data/sda1]
+root        476      2  0 03:41 ?        00:00:00 [kworker/u257:0]
+root        477      2  0 03:41 ?        00:00:00 [xfs-conv/sda1]
+root        478      2  0 03:41 ?        00:00:00 [hci0]
+root        479      2  0 03:41 ?        00:00:00 [hci0]
+root        480      2  0 03:41 ?        00:00:00 [kworker/u257:1]
+root        481      2  0 03:41 ?        00:00:00 [xfs-cil/sda1]
+root        485      2  0 03:41 ?        00:00:00 [xfs-reclaim/sda]
+root        487      2  0 03:41 ?        00:00:00 [xfs-log/sda1]
+root        489      2  0 03:41 ?        00:00:00 [xfs-eofblocks/s]
+root        490      2  0 03:41 ?        00:00:00 [xfsaild/sda1]
+root        567      1  0 03:41 ?        00:00:00 /sbin/auditd
+root        569    567  0 03:41 ?        00:00:00 /sbin/audispd
+root        571    569  0 03:41 ?        00:00:00 /usr/sbin/sedispatch
+root        573      2  0 03:41 ?        00:00:00 [rpciod]
+root        574      2  0 03:41 ?        00:00:00 [xprtiod]
+root        596      1  0 03:41 ?        00:00:00 /usr/lib/systemd/systemd-login
+dbus        597      1  0 03:41 ?        00:00:01 /usr/bin/dbus-daemon --system 
+rpc         599      1  0 03:41 ?        00:00:00 /sbin/rpcbind -w
+root        604      1  0 03:41 ?        00:00:02 /sbin/rngd -f
+root        605      1  0 03:41 ?        00:00:00 /usr/sbin/smartd -n -q never
+root        606      1  0 03:41 ?        00:00:00 /usr/sbin/ModemManager
+libstor+    607      1  0 03:41 ?        00:00:00 /usr/bin/lsmd -d
+rtkit       609      1  0 03:41 ?        00:00:00 /usr/libexec/rtkit-daemon
+root        611      1  0 03:41 ?        00:00:00 /usr/bin/VGAuthService -s
+root        613      1  0 03:41 ?        00:00:02 /usr/bin/vmtoolsd
+root        614      1  0 03:41 ?        00:00:00 /usr/sbin/abrtd -d -s
+root        619      1  0 03:41 ?        00:00:00 /usr/bin/abrt-watch-log -F Bac
+chrony      621      1  0 03:41 ?        00:00:00 /usr/sbin/chronyd
+root        624      1  0 03:41 ?        00:00:00 /usr/sbin/alsactl -s -n 19 -c 
+root        625      1  0 03:41 ?        00:00:00 /usr/libexec/bluetooth/bluetoo
+polkitd     632      1  0 03:41 ?        00:00:01 /usr/lib/polkit-1/polkitd --no
+root        638      1  0 03:41 ?        00:00:00 /usr/libexec/accounts-daemon
+avahi       641      1  0 03:41 ?        00:00:00 avahi-daemon: running [linux.l
+root        644      1  0 03:41 ?        00:00:00 /usr/libexec/udisks2/udisksd
+root        645      1  0 03:41 ?        00:00:00 /usr/sbin/irqbalance --foregro
+root        646      1  0 03:41 ?        00:00:00 /usr/bin/abrt-watch-log -F BUG
+root        651      1  0 03:41 ?        00:00:00 /usr/sbin/gssproxy -D
+avahi       657    641  0 03:41 ?        00:00:00 avahi-daemon: chroot helper
+root        697      1  0 03:41 ?        00:00:00 /bin/bash /usr/sbin/ksmtuned
+root        703      1  0 03:41 ?        00:00:01 /usr/bin/python2 -Es /usr/sbin
+root        741      2  0 03:41 ?        00:00:00 [kworker/0:1H]
+root        770      1  0 03:41 ?        00:00:00 /usr/sbin/NetworkManager --no-
+root        899    770  0 03:41 ?        00:00:00 /sbin/dhclient -d -q -sf /usr/
+root       1093      1  0 03:41 ?        00:00:00 /usr/sbin/cupsd -f
+root       1096      1  0 03:41 ?        00:00:00 /usr/bin/python2 -Es /usr/sbin
+root       1097      1  0 03:41 ?        00:00:00 /usr/sbin/sshd -D
+root       1098      1  0 03:41 ?        00:00:00 /usr/sbin/rsyslogd -n
+root       1105      1  0 03:41 ?        00:00:00 /usr/sbin/libvirtd
+root       1114      1  0 03:41 ?        00:00:01 /usr/sbin/crond -n
+root       1116      1  0 03:41 ?        00:00:00 /usr/sbin/atd -f
+root       1117      1  0 03:41 ?        00:00:00 /usr/sbin/gdm
+root       1348   1117  0 03:41 tty1     00:00:12 /usr/bin/X :0 -background none
+nobody     1417      1  0 03:41 ?        00:00:00 /usr/sbin/dnsmasq --conf-file=
+root       1419   1417  0 03:41 ?        00:00:00 /usr/sbin/dnsmasq --conf-file=
+root       1467      1  0 03:41 ?        00:00:00 /usr/libexec/postfix/master -w
+postfix    1479   1467  0 03:41 ?        00:00:00 pickup -l -t unix -u
+postfix    1480   1467  0 03:41 ?        00:00:00 qmgr -l -t unix -u
+root       1734      1  0 03:41 ?        00:00:00 /usr/libexec/upowerd
+root       1869      1  0 03:41 ?        00:00:00 /usr/libexec/boltd
+root       1875      1  0 03:41 ?        00:00:00 /usr/sbin/wpa_supplicant -u -f
+root       1878      1  0 03:41 ?        00:00:00 /usr/libexec/packagekitd
+colord     1962      1  0 03:42 ?        00:00:00 /usr/libexec/colord
+root       2055   1117  0 03:42 ?        00:00:00 gdm-session-worker [pam/gdm-pa
+shubham2   2068      1  0 03:43 ?        00:00:00 /usr/bin/gnome-keyring-daemon 
+shubham2   2087   2055  0 03:43 ?        00:00:00 /usr/libexec/gnome-session-bin
+shubham2   2097      1  0 03:43 ?        00:00:00 dbus-launch --sh-syntax --exit
+shubham2   2098      1  0 03:43 ?        00:00:00 /usr/bin/dbus-daemon --fork --
+shubham2   2127      1  0 03:43 ?        00:00:00 /usr/libexec/imsettings-daemon
+shubham2   2131      1  0 03:43 ?        00:00:00 /usr/libexec/gvfsd
+shubham2   2136      1  0 03:43 ?        00:00:00 /usr/libexec/gvfsd-fuse /run/u
+shubham2   2218   2087  0 03:43 ?        00:00:00 /usr/bin/ssh-agent /bin/sh -c 
+shubham2   2236      1  0 03:43 ?        00:00:00 /usr/libexec/at-spi-bus-launch
+shubham2   2241   2236  0 03:43 ?        00:00:00 /usr/bin/dbus-daemon --config-
+shubham2   2244      1  0 03:43 ?        00:00:00 /usr/libexec/at-spi2-registryd
+shubham2   2273   2087  2 03:43 ?        00:00:25 /usr/bin/gnome-shell
+shubham2   2285      1  0 03:43 ?        00:00:01 /usr/bin/pulseaudio --start --
+root       2303      2  0 03:43 ?        00:00:00 [krfcommd]
+shubham2   2306   2273  0 03:43 ?        00:00:00 ibus-daemon --xim --panel disa
+shubham2   2310   2306  0 03:43 ?        00:00:00 /usr/libexec/ibus-dconf
+shubham2   2314      1  0 03:43 ?        00:00:00 /usr/libexec/ibus-x11 --kill-d
+shubham2   2317      1  0 03:43 ?        00:00:00 /usr/libexec/ibus-portal
+shubham2   2326      1  0 03:43 ?        00:00:00 /usr/libexec/xdg-permission-st
+shubham2   2331      1  0 03:43 ?        00:00:00 /usr/libexec/gnome-shell-calen
+shubham2   2336      1  0 03:43 ?        00:00:00 /usr/libexec/evolution-source-
+shubham2   2343      1  0 03:43 ?        00:00:00 /usr/libexec/goa-daemon
+shubham2   2351      1  0 03:43 ?        00:00:00 /usr/libexec/dconf-service
+shubham2   2362      1  0 03:43 ?        00:00:00 /usr/libexec/mission-control-5
+shubham2   2373      1  0 03:43 ?        00:00:00 /usr/libexec/goa-identity-serv
+shubham2   2377      1  0 03:43 ?        00:00:00 /usr/libexec/gvfs-udisks2-volu
+shubham2   2387      1  0 03:43 ?        00:00:00 /usr/libexec/gvfs-afc-volume-m
+shubham2   2394      1  0 03:43 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volu
+shubham2   2404      1  0 03:43 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-m
+shubham2   2412      1  0 03:43 ?        00:00:00 /usr/libexec/gvfs-goa-volume-m
+shubham2   2440   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-power
+shubham2   2441   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-print-notific
+shubham2   2449   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-rfkill
+shubham2   2451   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-screensaver-p
+shubham2   2455   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-sharing
+shubham2   2459   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-sound
+shubham2   2463   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-xsettings
+shubham2   2466   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-wacom
+shubham2   2467   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-smartcard
+shubham2   2469   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-account
+shubham2   2487   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-a11y-settings
+shubham2   2490   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-clipboard
+shubham2   2492   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-color
+shubham2   2494   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-datetime
+shubham2   2497   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-housekeeping
+shubham2   2501   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-keyboard
+shubham2   2508   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-media-keys
+shubham2   2509   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-mouse
+shubham2   2537      1  0 03:43 ?        00:00:00 /usr/libexec/gsd-printer
+shubham2   2552      1  0 03:43 ?        00:00:00 /usr/libexec/evolution-calenda
+shubham2   2565   2087  0 03:43 ?        00:00:01 nautilus-desktop --force
+shubham2   2581   2552  0 03:43 ?        00:00:00 /usr/libexec/evolution-calenda
+shubham2   2583   2131  0 03:43 ?        00:00:00 /usr/libexec/gvfsd-trash --spa
+shubham2   2601      1  0 03:43 ?        00:00:02 /usr/bin/vmtoolsd -n vmusr
+shubham2   2603   2087  0 03:43 ?        00:00:00 /usr/libexec/gsd-disk-utility-
+shubham2   2606   2087  0 03:43 ?        00:00:00 /usr/bin/seapplet
+shubham2   2617      1  0 03:43 ?        00:00:00 /usr/libexec/evolution-address
+shubham2   2618   2087  0 03:43 ?        00:00:00 abrt-applet
+shubham2   2623   2087  0 03:43 ?        00:00:02 /usr/bin/gnome-software --gapp
+shubham2   2650   2087  0 03:43 ?        00:00:00 /usr/libexec/tracker-extract
+shubham2   2657   2087  0 03:43 ?        00:00:00 /usr/libexec/tracker-miner-app
+shubham2   2660   2617  0 03:43 ?        00:00:00 /usr/libexec/evolution-address
+shubham2   2662   2087  0 03:43 ?        00:00:00 /usr/libexec/tracker-miner-fs
+shubham2   2669   2306  0 03:43 ?        00:00:00 /usr/libexec/ibus-engine-simpl
+shubham2   2670   2087  0 03:43 ?        00:00:00 /usr/libexec/tracker-miner-use
+shubham2   2703      1  0 03:43 ?        00:00:00 /usr/libexec/tracker-store
+shubham2   2797   2131  0 03:43 ?        00:00:00 /usr/libexec/gvfsd-burn --spaw
+root       2814      1  0 03:43 ?        00:00:00 /usr/libexec/fwupd/fwupd
+shubham2   2818      1  0 03:43 ?        00:00:00 /usr/libexec/gvfsd-metadata
+shubham2   2833      1  0 03:43 ?        00:00:04 /usr/libexec/gnome-terminal-se
+shubham2   2839   2833  0 03:43 ?        00:00:00 gnome-pty-helper
+shubham2   2840   2833  0 03:43 pts/0    00:00:00 bash
+root       2983      2  0 03:46 ?        00:00:00 [kworker/1:0]
+root       3024      2  0 03:50 ?        00:00:00 [kworker/u256:0]
+root       3025      2  0 03:50 ?        00:00:00 [kworker/0:0]
+root       3041      2  0 03:50 ?        00:00:00 [kworker/1:2]
+root       3111      2  0 03:55 ?        00:00:00 [kworker/1:1]
+root       3266      1  0 04:01 ?        00:00:00 /usr/sbin/anacron -s
+root       3314    697  0 04:01 ?        00:00:00 sleep 60
+shubham2   3322   2840  0 04:02 pts/0    00:00:00 ps -ef
