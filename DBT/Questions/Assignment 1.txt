@@ -1,0 +1,33 @@
+1. login to MySQL
+
+2. list different database in MySQL
+
+3. How to connect to specific database
+
+4. List all the tables available in given database
+
+5. Switch from one database to other
+
+6. Run the script "hrschema.sql" in your database
+
+7. List the tables that you have in the database now
+
+8. Describe the structure of each table in MySQL
+
+9. Show the data from each table in MySQL
+
+10. Interact with MySQL WorkBench Software
+
+11. Clear the MySQL command prompt
+
+12. Fire command to check current user in database
+
+13. Fire command to see current date and time of server
+
+16. Observe the command "select null;"
+      Identify what is null
+
+17. Create your own tables sql file and try to execute in the database.
+	  
+
+

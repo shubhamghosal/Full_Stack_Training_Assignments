@@ -1,0 +1,761 @@
+1. login to MySQL
+Ans:Follow the steps below:
+-> Go to bin folder of MySQL setup that is C:\Program Files\MySQL\MySQL Server 8.0\bin
+-> Enter CMD from the bin folder
+-> Login using the command "mysql.exe -u root -p" and then enter the set root password to login to MySQL shell prompt.
+
+2. list different database in MySQL
+Ans: Use the command as follows:
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dac_4              |
+| dacstudent         |
+| humanresource      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+9 rows in set (0.02 sec)
+
+3. How to connect to specific database
+Ans: In order to connect to a specific database use the following command:
+mysql> use humanresource;
+Database changed
+
+4. List all the tables available in given database
+Ans:
+mysql> show tables;
++-------------------------+
+| Tables_in_humanresource |
++-------------------------+
+| countries               |
+| departments             |
+| emp_details_view        |
+| employees               |
+| job_history             |
+| jobs                    |
+| locations               |
+| regions                 |
++-------------------------+
+8 rows in set (0.01 sec)
+
+5. Switch from one database to other
+Ans:
+
+
+6. Run the script "hrschema.sql" in your database
+Ans: Use the command "source <PATH OF hrschema.sql file>
+Example---
+mysql> source F:\CDAC Course\Assignments\CDAC_Assignments\DBT\Assignment1\hrschema.sql
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.10 sec)
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.04 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 25 rows affected (0.12 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+Query OK, 23 rows affected (0.10 sec)
+Records: 23  Duplicates: 0  Warnings: 0
+
+Query OK, 27 rows affected (0.10 sec)
+Records: 27  Duplicates: 0  Warnings: 0
+
+Query OK, 107 rows affected (0.09 sec)
+Records: 107  Duplicates: 0  Warnings: 0
+
+Query OK, 107 rows affected (0.13 sec)
+Records: 107  Duplicates: 0  Warnings: 0
+
+Query OK, 107 rows affected (0.20 sec)
+Records: 107  Duplicates: 0  Warnings: 0
+
+Query OK, 27 rows affected (0.13 sec)
+Records: 27  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.06 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.11 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.10 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+
+7. List the tables that you have in the database now
+Ans:
+mysql> show tables;
++--------------------+
+| Tables_in_hrschema |
++--------------------+
+| countries          |
+| departments        |
+| emp_details_view   |
+| employees          |
+| job_history        |
+| jobs               |
+| locations          |
+| regions            |
++--------------------+
+8 rows in set (0.01 sec)
+
+8. Describe the structure of each table in MySQL
+Ans:
+mysql> DESC countries;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| country_id   | char(2)      | NO   | PRI | NULL    |       |
+| country_name | varchar(40)  | YES  |     | NULL    |       |
+| region_id    | int unsigned | NO   | MUL | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+mysql> DESC departments;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| department_id   | int unsigned | NO   | PRI | NULL    |       |
+| department_name | varchar(30)  | NO   |     | NULL    |       |
+| manager_id      | int unsigned | YES  | MUL | NULL    |       |
+| location_id     | int unsigned | YES  | MUL | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC emp_details_view;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| employee_id     | int unsigned | NO   |     | NULL    |       |
+| job_id          | varchar(10)  | NO   |     | NULL    |       |
+| manager_id      | int unsigned | YES  |     | NULL    |       |
+| department_id   | int unsigned | YES  |     | NULL    |       |
+| location_id     | int unsigned | YES  |     | NULL    |       |
+| country_id      | char(2)      | NO   |     | NULL    |       |
+| first_name      | varchar(20)  | YES  |     | NULL    |       |
+| last_name       | varchar(25)  | NO   |     | NULL    |       |
+| salary          | decimal(8,2) | NO   |     | NULL    |       |
+| commission_pct  | decimal(2,2) | YES  |     | NULL    |       |
+| department_name | varchar(30)  | NO   |     | NULL    |       |
+| job_title       | varchar(35)  | NO   |     | NULL    |       |
+| city            | varchar(30)  | NO   |     | NULL    |       |
+| state_province  | varchar(25)  | YES  |     | NULL    |       |
+| country_name    | varchar(40)  | YES  |     | NULL    |       |
+| region_name     | varchar(25)  | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+16 rows in set (0.01 sec)
+
+mysql> DESC employees;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| employee_id    | int unsigned | NO   | PRI | NULL    |       |
+| first_name     | varchar(20)  | YES  |     | NULL    |       |
+| last_name      | varchar(25)  | NO   |     | NULL    |       |
+| email          | varchar(25)  | NO   |     | NULL    |       |
+| phone_number   | varchar(20)  | YES  |     | NULL    |       |
+| hire_date      | date         | NO   |     | NULL    |       |
+| job_id         | varchar(10)  | NO   | MUL | NULL    |       |
+| salary         | decimal(8,2) | NO   |     | NULL    |       |
+| commission_pct | decimal(2,2) | YES  |     | NULL    |       |
+| manager_id     | int unsigned | YES  | MUL | NULL    |       |
+| department_id  | int unsigned | YES  | MUL | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+
+11 rows in set (0.00 sec)
+mysql> DESC job_history;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| employee_id   | int unsigned | NO   | PRI | NULL    |       |
+| start_date    | date         | NO   | PRI | NULL    |       |
+| end_date      | date         | NO   |     | NULL    |       |
+| job_id        | varchar(10)  | NO   | MUL | NULL    |       |
+| department_id | int unsigned | NO   | MUL | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> DESC jobs;
++------------+-----------------------+------+-----+---------+-------+
+| Field      | Type                  | Null | Key | Default | Extra |
++------------+-----------------------+------+-----+---------+-------+
+| job_id     | varchar(10)           | NO   | PRI | NULL    |       |
+| job_title  | varchar(35)           | NO   |     | NULL    |       |
+| min_salary | decimal(8,0) unsigned | YES  |     | NULL    |       |
+| max_salary | decimal(8,0) unsigned | YES  |     | NULL    |       |
++------------+-----------------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC locations;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| location_id    | int unsigned | NO   | PRI | NULL    | auto_increment |
+| street_address | varchar(40)  | YES  |     | NULL    |                |
+| postal_code    | varchar(12)  | YES  |     | NULL    |                |
+| city           | varchar(30)  | NO   |     | NULL    |                |
+| state_province | varchar(25)  | YES  |     | NULL    |                |
+| country_id     | char(2)      | NO   | MUL | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> DESC regions;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| region_id   | int unsigned | NO   | PRI | NULL    |       |
+| region_name | varchar(25)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+9. Show the data from each table in MySQL
+Ans:
+mysql> SELECT * FROM countries;
++------------+--------------------------+-----------+
+| country_id | country_name             | region_id |
++------------+--------------------------+-----------+
+| AR         | Argentina                |         2 |
+| AU         | Australia                |         3 |
+| BE         | Belgium                  |         1 |
+| BR         | Brazil                   |         2 |
+| CA         | Canada                   |         2 |
+| CH         | Switzerland              |         1 |
+| CN         | China                    |         3 |
+| DE         | Germany                  |         1 |
+| DK         | Denmark                  |         1 |
+| EG         | Egypt                    |         4 |
+| FR         | France                   |         1 |
+| HK         | HongKong                 |         3 |
+| IL         | Israel                   |         4 |
+| IN         | India                    |         3 |
+| IT         | Italy                    |         1 |
+| JP         | Japan                    |         3 |
+| KW         | Kuwait                   |         4 |
+| MX         | Mexico                   |         2 |
+| NG         | Nigeria                  |         4 |
+| NL         | Netherlands              |         1 |
+| SG         | Singapore                |         3 |
+| UK         | United Kingdom           |         1 |
+| US         | United States of America |         2 |
+| ZM         | Zambia                   |         4 |
+| ZW         | Zimbabwe                 |         4 |
++------------+--------------------------+-----------+
+25 rows in set (0.01 sec)
+
+
+10. Interact with MySQL WorkBench Software
+Ans:
+-> Open MySQL Workbench
+-> Click on the desired user and then login using the set password.
+-> Input your queries to test
+
+11. Clear the MySQL command prompt
+Ans:
+mysql> system cls;
+
+12. Fire command to check current user in database
+Ans:
+SELECT CURRENT_USER();
+root@localhost
+
+13. Fire command to see current date and time of server
+Ans:
+SELECT NOW();
+2021-07-01 14:27:32
+
+16. Observe the command "select null;"
+      Identify what is null
+
+17. Create your own tables sql file and try to execute in the database.
+ANS:
+
+CREATE DATABASE ASSIGNMENT_FIRST;
+
+USE ASSIGNMENT_FIRST;
+
+CREATE TABLE STUDENT_DETAILS 
+				(
+				STUDENTNAME varchar(30),
+				COURSE varchar(15),
+				MARKS int,
+				DOB datetime 
+				);
+                
+INSERT INTO STUDENT_DETAILS VALUES('SHUBHAM','EDAC',85,'1995-12-21 05:12:12');
+
+INSERT INTO STUDENT_DETAILS VALUES('RAJU','EDAC',75,'1997-11-21 05:12:00');
+	  
+
+
