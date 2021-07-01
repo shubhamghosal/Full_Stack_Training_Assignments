@@ -737,10 +737,13 @@ SELECT NOW();
 
 16. Observe the command "select null;"
       Identify what is null
+Ans:
+It sets up the Exists status as true if there are records in the select query.
+SELECT * FROM <TABLENAME>
+WHERE <COLUMNNAME> IS NULL;
 
 17. Create your own tables sql file and try to execute in the database.
 ANS:
-
 CREATE DATABASE ASSIGNMENT_FIRST;
 
 USE ASSIGNMENT_FIRST;
@@ -756,6 +759,5 @@ CREATE TABLE STUDENT_DETAILS
 INSERT INTO STUDENT_DETAILS VALUES('SHUBHAM','EDAC',85,'1995-12-21 05:12:12');
 
 INSERT INTO STUDENT_DETAILS VALUES('RAJU','EDAC',75,'1997-11-21 05:12:00');
-	  
 
 
