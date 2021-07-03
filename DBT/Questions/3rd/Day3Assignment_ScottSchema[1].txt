@@ -1,0 +1,92 @@
+1) Display all the records in emp table?
+
+2) Display all the records in emp table where employee belongs to deptno 10?
+
+3) Display all the records in emp table where employee does not belong to deptno 30?
+
+4) Display total number of records in Emp table?
+
+5) Display emp table with salary descending order?
+
+6) Display all the records in emp table order by ascending deptno, descending salary?
+
+7) Display all employees those who were joined in year 1981?
+
+8) Display COMM in emp table. Display zero in place of null.
+
+9) Display the records in emp table where MGR in 7698,7566 and sal should be greater then 1500
+
+10) Display all employees where employees hired before 01-JAN-1981
+
+11) Display all employees with how many years they have been servicing in the company?
+
+12) Display all employees those were not joined in 1981?
+
+13) Display all employees where their salary is less then the Ford’s salary?
+
+14) Display all records in EMP table those were joined before SCOTT joined?
+
+15) Display all employees those who were joined in third quarter of 1981?
+
+16) Write a query to display current date?
+
+17) Display distinct job from emp table?
+
+18) Display all the records in emp table where employee hired after 28-SEP-81 and before 03-DEC-81?
+
+19) Write a query that displays the employee’s names with the first letter capitalized and all other letters lowercase for all employees whose name starts with J, A, or M
+
+20) Display the empno, ename, sal, and salary increased by 15%.
+
+21) Display all employees where ename start with J and ends with S
+
+22) Display all employees where employee does not belong to 10,20,40
+
+23) Display all employees where jobs does not belong to PRESIDENT and MANAGER?
+
+24) Display the maximum salary in the emp table
+
+25) Display average salary for job SALESMAN
+
+26) Display all three figures salary in emp table
+
+27) Display all records in emp table for employee who does not receive any commission
+
+28) Display all ename where first character could be anything, but second character should be L?
+
+29) Display sum of salary for each department.
+
+30) Display all department with Minimum salary and maximum salary?
+
+31) Display all the departments where department does not have any employees
+
+32) Display all the departments where department does have atleast one employee
+
+33) Display all employees those who are not managers?
+
+34) Display all the records for deptno which belongs to employee name JAMES?
+
+35) Display all the records in emp table where salary should be less then or equal to ADAMS salary?
+
+36) Display all employees those were joined before employee WARD joined?
+
+37) Display all subordinate those who are working under BLAKE?
+
+38) Display all subordinate(all levels) for employee BLAKE?
+
+39) Display all record in emp table for deptno which belongs to KING's Job?
+
+40) Display the employees for empno which belongs to job PRESIDENT?
+
+41) Display list of ename those who have joined in Year 81 as MANAGER?
+
+42) Display who is making highest commission?
+
+43) Display who is senior most employee? How many years has been working?
+
+44) Display who is most experienced and least experienced employee?
+
+45) Display all employee whose location is DALLAS?
+
+46) List ename, job, sal and department of all employees whose salary is not within the salary grade?
+
