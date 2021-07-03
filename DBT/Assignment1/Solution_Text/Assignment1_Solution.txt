@@ -46,7 +46,7 @@ mysql> show tables;
 
 5. Switch from one database to other
 Ans:
-
+use <Database Name>;
 
 6. Run the script "hrschema.sql" in your database
 Ans: Use the command "source <PATH OF hrschema.sql file>
@@ -583,137 +583,26 @@ mysql> DESC countries;
 | region_id    | int unsigned | NO   | MUL | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
-mysql> DESC departments;
-+-----------------+--------------+------+-----+---------+-------+
-| Field           | Type         | Null | Key | Default | Extra |
-+-----------------+--------------+------+-----+---------+-------+
-| department_id   | int unsigned | NO   | PRI | NULL    |       |
-| department_name | varchar(30)  | NO   |     | NULL    |       |
-| manager_id      | int unsigned | YES  | MUL | NULL    |       |
-| location_id     | int unsigned | YES  | MUL | NULL    |       |
-+-----------------+--------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
 
-mysql> DESC emp_details_view;
-+-----------------+--------------+------+-----+---------+-------+
-| Field           | Type         | Null | Key | Default | Extra |
-+-----------------+--------------+------+-----+---------+-------+
-| employee_id     | int unsigned | NO   |     | NULL    |       |
-| job_id          | varchar(10)  | NO   |     | NULL    |       |
-| manager_id      | int unsigned | YES  |     | NULL    |       |
-| department_id   | int unsigned | YES  |     | NULL    |       |
-| location_id     | int unsigned | YES  |     | NULL    |       |
-| country_id      | char(2)      | NO   |     | NULL    |       |
-| first_name      | varchar(20)  | YES  |     | NULL    |       |
-| last_name       | varchar(25)  | NO   |     | NULL    |       |
-| salary          | decimal(8,2) | NO   |     | NULL    |       |
-| commission_pct  | decimal(2,2) | YES  |     | NULL    |       |
-| department_name | varchar(30)  | NO   |     | NULL    |       |
-| job_title       | varchar(35)  | NO   |     | NULL    |       |
-| city            | varchar(30)  | NO   |     | NULL    |       |
-| state_province  | varchar(25)  | YES  |     | NULL    |       |
-| country_name    | varchar(40)  | YES  |     | NULL    |       |
-| region_name     | varchar(25)  | YES  |     | NULL    |       |
-+-----------------+--------------+------+-----+---------+-------+
-16 rows in set (0.01 sec)
-
-mysql> DESC employees;
-+----------------+--------------+------+-----+---------+-------+
-| Field          | Type         | Null | Key | Default | Extra |
-+----------------+--------------+------+-----+---------+-------+
-| employee_id    | int unsigned | NO   | PRI | NULL    |       |
-| first_name     | varchar(20)  | YES  |     | NULL    |       |
-| last_name      | varchar(25)  | NO   |     | NULL    |       |
-| email          | varchar(25)  | NO   |     | NULL    |       |
-| phone_number   | varchar(20)  | YES  |     | NULL    |       |
-| hire_date      | date         | NO   |     | NULL    |       |
-| job_id         | varchar(10)  | NO   | MUL | NULL    |       |
-| salary         | decimal(8,2) | NO   |     | NULL    |       |
-| commission_pct | decimal(2,2) | YES  |     | NULL    |       |
-| manager_id     | int unsigned | YES  | MUL | NULL    |       |
-| department_id  | int unsigned | YES  | MUL | NULL    |       |
-+----------------+--------------+------+-----+---------+-------+
-
-11 rows in set (0.00 sec)
-mysql> DESC job_history;
-+---------------+--------------+------+-----+---------+-------+
-| Field         | Type         | Null | Key | Default | Extra |
-+---------------+--------------+------+-----+---------+-------+
-| employee_id   | int unsigned | NO   | PRI | NULL    |       |
-| start_date    | date         | NO   | PRI | NULL    |       |
-| end_date      | date         | NO   |     | NULL    |       |
-| job_id        | varchar(10)  | NO   | MUL | NULL    |       |
-| department_id | int unsigned | NO   | MUL | NULL    |       |
-+---------------+--------------+------+-----+---------+-------+
-5 rows in set (0.01 sec)
-
-mysql> DESC jobs;
-+------------+-----------------------+------+-----+---------+-------+
-| Field      | Type                  | Null | Key | Default | Extra |
-+------------+-----------------------+------+-----+---------+-------+
-| job_id     | varchar(10)           | NO   | PRI | NULL    |       |
-| job_title  | varchar(35)           | NO   |     | NULL    |       |
-| min_salary | decimal(8,0) unsigned | YES  |     | NULL    |       |
-| max_salary | decimal(8,0) unsigned | YES  |     | NULL    |       |
-+------------+-----------------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
-
-mysql> DESC locations;
-+----------------+--------------+------+-----+---------+----------------+
-| Field          | Type         | Null | Key | Default | Extra          |
-+----------------+--------------+------+-----+---------+----------------+
-| location_id    | int unsigned | NO   | PRI | NULL    | auto_increment |
-| street_address | varchar(40)  | YES  |     | NULL    |                |
-| postal_code    | varchar(12)  | YES  |     | NULL    |                |
-| city           | varchar(30)  | NO   |     | NULL    |                |
-| state_province | varchar(25)  | YES  |     | NULL    |                |
-| country_id     | char(2)      | NO   | MUL | NULL    |                |
-+----------------+--------------+------+-----+---------+----------------+
-6 rows in set (0.00 sec)
-
-mysql> DESC regions;
-+-------------+--------------+------+-----+---------+-------+
-| Field       | Type         | Null | Key | Default | Extra |
-+-------------+--------------+------+-----+---------+-------+
-| region_id   | int unsigned | NO   | PRI | NULL    |       |
-| region_name | varchar(25)  | YES  |     | NULL    |       |
-+-------------+--------------+------+-----+---------+-------+
-2 rows in set (0.00 sec)
+Similarly use the commands:
+desc departments;
+desc emp_details_view;
+desc employees;
+desc job_history;
+desc jobs;
+desc locations;
+desc regions;
 
 9. Show the data from each table in MySQL
 Ans:
-mysql> SELECT * FROM countries;
-+------------+--------------------------+-----------+
-| country_id | country_name             | region_id |
-+------------+--------------------------+-----------+
-| AR         | Argentina                |         2 |
-| AU         | Australia                |         3 |
-| BE         | Belgium                  |         1 |
-| BR         | Brazil                   |         2 |
-| CA         | Canada                   |         2 |
-| CH         | Switzerland              |         1 |
-| CN         | China                    |         3 |
-| DE         | Germany                  |         1 |
-| DK         | Denmark                  |         1 |
-| EG         | Egypt                    |         4 |
-| FR         | France                   |         1 |
-| HK         | HongKong                 |         3 |
-| IL         | Israel                   |         4 |
-| IN         | India                    |         3 |
-| IT         | Italy                    |         1 |
-| JP         | Japan                    |         3 |
-| KW         | Kuwait                   |         4 |
-| MX         | Mexico                   |         2 |
-| NG         | Nigeria                  |         4 |
-| NL         | Netherlands              |         1 |
-| SG         | Singapore                |         3 |
-| UK         | United Kingdom           |         1 |
-| US         | United States of America |         2 |
-| ZM         | Zambia                   |         4 |
-| ZW         | Zimbabwe                 |         4 |
-+------------+--------------------------+-----------+
-25 rows in set (0.01 sec)
-
+select * from countries;
+select * from departments;
+select * from emp_details_view;
+select * from employees;
+select * from job_history;
+select * from jobs;
+select * from locations;
+select * from regions;
 
 10. Interact with MySQL WorkBench Software
 Ans:
@@ -732,17 +621,17 @@ root@localhost
 
 13. Fire command to see current date and time of server
 Ans:
-SELECT NOW();
-2021-07-01 14:27:32
+select current_date(); # Date
+select current_time(); # Time
+select current_timestamp(); # Date with timestamp
 
-16. Observe the command "select null;"
+14. Observe the command "select null;"
       Identify what is null
 Ans:
-It sets up the Exists status as true if there are records in the select query.
-SELECT * FROM <TABLENAME>
-WHERE <COLUMNNAME> IS NULL;
+Null means no data which shows a null field with null column
+select null;
 
-17. Create your own tables sql file and try to execute in the database.
+15. Create your own tables sql file and try to execute in the database.
 ANS:
 CREATE DATABASE ASSIGNMENT_FIRST;
 
