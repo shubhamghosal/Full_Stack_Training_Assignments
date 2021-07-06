@@ -1,0 +1,522 @@
+Assumption : We have created Scott schema (database) in MySQL and created following tables using attached script
+EMP
+DEPT
+SALGRADE
+BONUS.
+
+mysql> USE SCOTT;
+Database changed
+mysql> SHOW TABLES;
++-----------------+
+| Tables_in_scott |
++-----------------+
+| bonus           |
+| dept            |
+| emp             |
+| salgrade        |
++-----------------+
+4 rows in set (0.00 sec)
+
+
+Questions on SELECT Clause
+----------------------------------------
+1. Display all the records in emp table
+mysql> SELECT * FROM EMP;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| empno | ename  | job       | mgr  | hiredate   | sal     | comm    | deptno |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1987-07-13 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-07 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1987-07-13 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.13 sec)
+
+2. Display first two column from emp table
+mysql> SELECT EMPNO,ENAME FROM EMP;
++-------+--------+
+| EMPNO | ENAME  |
++-------+--------+
+|  7369 | SMITH  |
+|  7499 | ALLEN  |
+|  7521 | WARD   |
+|  7566 | JONES  |
+|  7654 | MARTIN |
+|  7698 | BLAKE  |
+|  7782 | CLARK  |
+|  7788 | SCOTT  |
+|  7839 | KING   |
+|  7844 | TURNER |
+|  7876 | ADAMS  |
+|  7900 | JAMES  |
+|  7902 | FORD   |
+|  7934 | MILLER |
++-------+--------+
+14 rows in set (0.00 sec)
+
+3. Display the structure of emp, dept and salgrade table
+mysql> DESC BONUS;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ename | varchar(10) | YES  |     | NULL    |       |
+| job   | varchar(9)  | YES  |     | NULL    |       |
+| sal   | int         | YES  |     | NULL    |       |
+| comm  | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | NO   | PRI | NULL    |       |
+| dname  | varchar(14) | YES  |     | NULL    |       |
+| loc    | varchar(13) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC EMP;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empno    | int         | NO   | PRI | NULL    |       |
+| ename    | varchar(10) | YES  |     | NULL    |       |
+| job      | varchar(9)  | YES  |     | NULL    |       |
+| mgr      | int         | YES  |     | NULL    |       |
+| hiredate | date        | YES  |     | NULL    |       |
+| sal      | float(7,2)  | YES  |     | NULL    |       |
+| comm     | float(7,2)  | YES  |     | NULL    |       |
+| deptno   | int         | YES  | MUL | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> DESC SALGRADE;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| grade | int  | YES  |     | NULL    |       |
+| losal | int  | YES  |     | NULL    |       |
+| hisal | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+4. Display unique jobs from employee table
+mysql> SELECT DISTINCT JOB FROM EMP;
++-----------+
+| JOB       |
++-----------+
+| CLERK     |
+| SALESMAN  |
+| MANAGER   |
+| ANALYST   |
+| PRESIDENT |
++-----------+
+5 rows in set (0.10 sec)
+5. Display the output as follows 
+          SCOTT is earning 800 dollars
+          ...
+mysql> select concat(ename,' is earning ', sal, ' dollars') from emp where ename='scott';
++--------+------------+---------+---------+
+| ENAME  | is earning | SAL     | dollars |
++--------+------------+---------+---------+
+| SMITH  | is earning |  800.00 | dollars |
+| ALLEN  | is earning | 1600.00 | dollars |
+| WARD   | is earning | 1250.00 | dollars |
+| JONES  | is earning | 2975.00 | dollars |
+| MARTIN | is earning | 1250.00 | dollars |
+| BLAKE  | is earning | 2850.00 | dollars |
+| CLARK  | is earning | 2450.00 | dollars |
+| SCOTT  | is earning | 3000.00 | dollars |
+| KING   | is earning | 5000.00 | dollars |
+| TURNER | is earning | 1500.00 | dollars |
+| ADAMS  | is earning | 1100.00 | dollars |
+| JAMES  | is earning |  950.00 | dollars |
+| FORD   | is earning | 3000.00 | dollars |
+| MILLER | is earning | 1300.00 | dollars |
++--------+------------+---------+---------+
+14 rows in set (0.00 sec)
+
+6. Display the output from employee table in following format
+
+ Employee Name  Designation 
+-----------------------   ---------------------
+ SMITH                 CLERK
+ ALLEN                 SALESMAN
+...
+mysql> SELECT ENAME AS "Employee Name", JOB AS "Designation" FROM EMP;
++---------------+-------------+
+| Employee Name | Designation |
++---------------+-------------+
+| SMITH         | CLERK       |
+| ALLEN         | SALESMAN    |
+| WARD          | SALESMAN    |
+| JONES         | MANAGER     |
+| MARTIN        | SALESMAN    |
+| BLAKE         | MANAGER     |
+| CLARK         | MANAGER     |
+| SCOTT         | ANALYST     |
+| KING          | PRESIDENT   |
+| TURNER        | SALESMAN    |
+| ADAMS         | CLERK       |
+| JAMES         | CLERK       |
+| FORD          | ANALYST     |
+| MILLER        | CLERK       |
++---------------+-------------+
+14 rows in set (0.00 sec)
+
+7. Display the name of employee and annual salary of each employee. Annual sal must be calculated by considering sal, comm and bonus of 1000$ for each employee
+mysql> SELECT ENAME, SAL+COMM+1000 AS "ANNUAL SALARY" FROM EMP;
++--------+---------------+
+| ENAME  | ANNUAL SALARY |
++--------+---------------+
+| SMITH  |          NULL |
+| ALLEN  |       2900.00 |
+| WARD   |       2750.00 |
+| JONES  |          NULL |
+| MARTIN |       3650.00 |
+| BLAKE  |          NULL |
+| CLARK  |          NULL |
+| SCOTT  |          NULL |
+| KING   |          NULL |
+| TURNER |       2500.00 |
+| ADAMS  |          NULL |
+| JAMES  |          NULL |
+| FORD   |          NULL |
+| MILLER |          NULL |
++--------+---------------+
+14 rows in set (0.00 sec)
+
+8. Display the list of manager's employee number in following format. Ensure that same manager number must not be repeated. Also ensure that NULL must not be displayed in the result (display NA in place of null)
+
+Manager Number
+------------------------
+7902
+7698
+7839
+7566
+
+mysql> SELECT DISTINCT
+    -> CASE
+    -> WHEN MGR IS NULL THEN 'NA' ELSE MGR
+    -> END
+    -> AS "Manager Number"
+    -> FROM EMP;
++----------------+
+| Manager Number |
++----------------+
+| 7902           |
+| 7698           |
+| 7839           |
+| 7566           |
+| NA             |
+| 7788           |
+| 7782           |
++----------------+
+7 rows in set (0.00 sec)
+
+9. Display the employee name, salary and commission and ensure that we consider the commission as 1500 for employees where commission is not paid.
+mysql> SELECT ENAME, SAL,
+    -> CASE
+    -> WHEN COMM IS NULL THEN 1500 ELSE COMM
+    -> END
+    -> AS "COMMISSION"
+    -> FROM EMP;
++--------+---------+------------+
+| ENAME  | SAL     | COMMISSION |
++--------+---------+------------+
+| SMITH  |  800.00 |    1500.00 |
+| ALLEN  | 1600.00 |     300.00 |
+| WARD   | 1250.00 |     500.00 |
+| JONES  | 2975.00 |    1500.00 |
+| MARTIN | 1250.00 |    1400.00 |
+| BLAKE  | 2850.00 |    1500.00 |
+| CLARK  | 2450.00 |    1500.00 |
+| SCOTT  | 3000.00 |    1500.00 |
+| KING   | 5000.00 |    1500.00 |
+| TURNER | 1500.00 |       0.00 |
+| ADAMS  | 1100.00 |    1500.00 |
+| JAMES  |  950.00 |    1500.00 |
+| FORD   | 3000.00 |    1500.00 |
+| MILLER | 1300.00 |    1500.00 |
++--------+---------+------------+
+14 rows in set (0.00 sec)
+
+Questions on WHERE Clause
+----------------------------------------
+1. List the employees who are working in department 10
+
+mysql> SELECT * FROM EMP WHERE DEPTNO = 10;
++-------+--------+-----------+------+------------+---------+------+--------+
+| empno | ename  | job       | mgr  | hiredate   | sal     | comm | deptno |
++-------+--------+-----------+------+------------+---------+------+--------+
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 | NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-07 | 5000.00 | NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 | NULL |     10 |
++-------+--------+-----------+------+------------+---------+------+--------+
+3 rows in set (0.11 sec)
+
+2. List the name and salary of employees who are working as CLERK and SALESMAN
+mysql> SELECT ENAME, SAL FROM EMP WHERE JOB = 'CLERK' OR JOB = 'SALESMAN';
++--------+---------+
+| ENAME  | SAL     |
++--------+---------+
+| SMITH  |  800.00 |
+| ALLEN  | 1600.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| TURNER | 1500.00 |
+| ADAMS  | 1100.00 |
+| JAMES  |  950.00 |
+| MILLER | 1300.00 |
++--------+---------+
+8 rows in set (0.00 sec)
+
+3. List the name of employees who have joined the company after year 1981
+mysql> SELECT ENAME FROM EMP WHERE HIREDATE>'1981-12-31';
++--------+
+| ENAME  |
++--------+
+| SCOTT  |
+| ADAMS  |
+| MILLER |
++--------+
+3 rows in set (0.10 sec)
+4. List the name of employees who have joined the company in year 1981
+mysql> SELECT ENAME FROM EMP WHERE HIREDATE BETWEEN '1981-01-01' AND '1981-12-31';
++--------+
+| ENAME  |
++--------+
+| ALLEN  |
+| WARD   |
+| JONES  |
+| MARTIN |
+| BLAKE  |
+| CLARK  |
+| KING   |
+| TURNER |
+| JAMES  |
+| FORD   |
++--------+
+10 rows in set (0.00 sec)
+
+5. List the details of employees who are working as CLERK and earning more then 1000$
+mysql> SELECT * FROM EMP WHERE JOB = 'CLERK' AND SAL > 1000;
++-------+--------+-------+------+------------+---------+------+--------+
+| empno | ename  | job   | mgr  | hiredate   | sal     | comm | deptno |
++-------+--------+-------+------+------------+---------+------+--------+
+|  7876 | ADAMS  | CLERK | 7788 | 1987-07-13 | 1100.00 | NULL |     20 |
+|  7934 | MILLER | CLERK | 7782 | 1982-01-23 | 1300.00 | NULL |     10 |
++-------+--------+-------+------+------------+---------+------+--------+
+2 rows in set (0.00 sec)
+
+6. List the details of employees who are not managed by any manager
+mysql> SELECT * FROM EMP WHERE MGR IS NULL;
++-------+-------+-----------+------+------------+---------+------+--------+
+| empno | ename | job       | mgr  | hiredate   | sal     | comm | deptno |
++-------+-------+-----------+------+------------+---------+------+--------+
+|  7839 | KING  | PRESIDENT | NULL | 1981-11-07 | 5000.00 | NULL |     10 |
++-------+-------+-----------+------+------------+---------+------+--------+
+1 row in set (0.00 sec)
+
+7. List the name of employees who are not earning any commission
+mysql> SELECT ENAME FROM EMP WHERE COMM IS NULL;
++--------+
+| ENAME  |
++--------+
+| SMITH  |
+| JONES  |
+| BLAKE  |
+| CLARK  |
+| SCOTT  |
+| KING   |
+| ADAMS  |
+| JAMES  |
+| FORD   |
+| MILLER |
++--------+
+10 rows in set (0.00 sec)
+
+8. List the details of employees whose total salary (sal and commission) is more then $2000.
+mysql> SELECT * FROM EMP WHERE SAL+COMM > 2000;
++-------+--------+----------+------+------------+---------+---------+--------+
+| empno | ename  | job      | mgr  | hiredate   | sal     | comm    | deptno |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+1 row in set (0.00 sec)
+
+9. List the details of employees which are working as SALESMAN in department 10 and 30.
+mysql> SELECT * FROM EMP WHERE JOB = 'SALESMAN' AND DEPTNO = 10 OR DEPTNO = 20;
++-------+-------+---------+------+------------+---------+------+--------+
+| empno | ename | job     | mgr  | hiredate   | sal     | comm | deptno |
++-------+-------+---------+------+------------+---------+------+--------+
+|  7369 | SMITH | CLERK   | 7902 | 1980-12-17 |  800.00 | NULL |     20 |
+|  7566 | JONES | MANAGER | 7839 | 1981-04-02 | 2975.00 | NULL |     20 |
+|  7788 | SCOTT | ANALYST | 7566 | 1987-07-13 | 3000.00 | NULL |     20 |
+|  7876 | ADAMS | CLERK   | 7788 | 1987-07-13 | 1100.00 | NULL |     20 |
+|  7902 | FORD  | ANALYST | 7566 | 1981-12-03 | 3000.00 | NULL |     20 |
++-------+-------+---------+------+------------+---------+------+--------+
+5 rows in set (0.00 sec)
+
+10. List details of employees who are working as SALESMAN in department 30 and earning some commission
+mysql> SELECT * FROM EMP WHERE JOB = 'SALESMAN' AND DEPTNO = 30 AND COMM IS NOT NULL AND COMM > 0;
++-------+--------+----------+------+------------+---------+---------+--------+
+| empno | ename  | job      | mgr  | hiredate   | sal     | comm    | deptno |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7499 | ALLEN  | SALESMAN | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+3 rows in set (0.00 sec)
+
+Questions on Information schema
+---------------------------------------------
+1. Identify and query the data dictionaries which can provide following details
+      - List of tables in scott schema
+mysql> SHOW TABLES;
++-----------------+
+| Tables_in_scott |
++-----------------+
+| bonus           |
+| dept            |
+| emp             |
+| salgrade        |
++-----------------+
+4 rows in set (0.00 sec)
+      - List of columns and correspondings data types of all the tables in scott schema
+mysql> DESC BONUS;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ename | varchar(10) | YES  |     | NULL    |       |
+| job   | varchar(9)  | YES  |     | NULL    |       |
+| sal   | int         | YES  |     | NULL    |       |
+| comm  | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | NO   | PRI | NULL    |       |
+| dname  | varchar(14) | YES  |     | NULL    |       |
+| loc    | varchar(13) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC EMP;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empno    | int         | NO   | PRI | NULL    |       |
+| ename    | varchar(10) | YES  |     | NULL    |       |
+| job      | varchar(9)  | YES  |     | NULL    |       |
+| mgr      | int         | YES  |     | NULL    |       |
+| hiredate | date        | YES  |     | NULL    |       |
+| sal      | float(7,2)  | YES  |     | NULL    |       |
+| comm     | float(7,2)  | YES  |     | NULL    |       |
+| deptno   | int         | YES  | MUL | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> DESC SALGRADE;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| grade | int  | YES  |     | NULL    |       |
+| losal | int  | YES  |     | NULL    |       |
+| hisal | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+2. Fetch list of all data dictionary in information schema and observe there naming convention
+
+3. List all data dictionary whose name have 'col' keyword in it.
+
+SQL Exercise 2
+
+1.Display the Supplier table in the descending order of CITY.
+mysql> SELECT * FROM SUPPLIERS ORDER BY CITY DESC;
++------+-------+--------+--------+
+| SNUM | SNAME | STATUS | CITY   |
++------+-------+--------+--------+
+|    2 | Jones |     10 | Paris  |
+|    3 | Blake |     30 | Paris  |
+|    1 | Smith |     20 | London |
+|    4 | Clark |     20 | London |
+|    5 | Adams |     30 | Athens |
++------+-------+--------+--------+
+5 rows in set (0.00 sec)
+
+2.Display the Part Table in the ascending order of CITY and within the city in the ascending order of Part names.
+mysql> SELECT * FROM PARTS ORDER BY CITY,PNAME;
++------+-------+-------+--------+--------+
+| PNUM | PNAME | COLOR | WEIGHT | CITY   |
++------+-------+-------+--------+--------+
+|    6 | Cog   | Red   |   19.0 | London |
+|    1 | Nut   | Red   |   12.0 | London |
+|    4 | Screw | Red   |   14.0 | London |
+|    3 | Screw | Blue  |   17.0 | Oslo   |
+|    2 | Bolt  | Green |   17.0 | Paris  |
+|    5 | Cam   | Blue  |   12.0 | Paris  |
++------+-------+-------+--------+--------+
+6 rows in set (0.00 sec)
+
+3.Display all the Suppliers with a status between 10 and 20.
+mysql> SELECT * FROM SUPPLIERS WHERE STATUS BETWEEN 10 AND 20;
++------+-------+--------+--------+
+| SNUM | SNAME | STATUS | CITY   |
++------+-------+--------+--------+
+|    1 | Smith |     20 | London |
+|    2 | Jones |     10 | Paris  |
+|    4 | Clark |     20 | London |
++------+-------+--------+--------+
+3 rows in set (0.00 sec)
+
+4.Display all the Parts and their Weight, which are not in the range of 10 and 15.
+mysql> SELECT PNAME,WEIGHT FROM PARTS WHERE WEIGHT NOT BETWEEN 10 AND 15;
++-------+--------+
+| PNAME | WEIGHT |
++-------+--------+
+| Bolt  |   17.0 |
+| Screw |   17.0 |
+| Cog   |   19.0 |
++-------+--------+
+3 rows in set (0.00 sec)
+
+5.Display all the Part names starting with the letter ‘S’.
+mysql> SELECT PNAME FROM PARTS WHERE PNAME LIKE 'S%';
++-------+
+| PNAME |
++-------+
+| Screw |
+| Screw |
++-------+
+2 rows in set (0.00 sec)
+
+6.Display all the Suppliers, belonging to cities starting with the letter ‘L’.
+mysql> SELECT * FROM SUPPLIERS WHERE CITY LIKE 'L%';
++------+-------+--------+--------+
+| SNUM | SNAME | STATUS | CITY   |
++------+-------+--------+--------+
+|    1 | Smith |     20 | London |
+|    4 | Clark |     20 | London |
++------+-------+--------+--------+
+2 rows in set (0.00 sec)
+
+7.Display all the Projects, with the third letter in JNAME as ‘n’.
+
+mysql> SELECT * FROM PARTS WHERE PNAME LIKE '__N%';
+Empty set (0.00 sec)
