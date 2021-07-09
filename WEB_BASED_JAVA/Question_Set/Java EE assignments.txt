@@ -1,0 +1,33 @@
+Day 1
+1. Before revision , ensure DB connectivity using DBUtils (singleton pattern) & tester code
+
+2. Import day1.1 project in your workspace.
+Edit JDBC JAR (with lab faculty's help) from build path
+Use this project for your reference.
+(revise JDBC steps completely)
+
+3. Write  customer login & registration.
+
+3.1 Copy customers table & data in your DB. (ref : day1-data\day1_help\jdbc help\sql\bookshop sql.txt)
+
+3.2 Create DBUtils & Tester for the following
+
+1. User Login
+I/P email n passsord
+O/P In case of success : display complete customer details . In case of invalid login : error mesg
+
+
+2. New User registration
+I/P all details (except customer id , since customer id is auto inc)
+O/P message (registration success or failed)
+
+
+4. For testing Cloning : refer to ready code (day1-data\day1_help\ready code\test_cloning)
+With help of lab faculty , understand : 
+shallow copy
+deep copy
+
+5. Reading H.W
+5.1 Read day1-data\day1_help\jdbc help\SQL injection\regarding SQL injection
+5.2 Object class methods wait & notify
+5.3 Revise ITC
