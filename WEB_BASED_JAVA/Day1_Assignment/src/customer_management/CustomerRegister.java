@@ -1,6 +1,6 @@
 package customer_management;
 
-import static utils.DBUtilsRegister.fetchConnection;
+import static utils.DBUtils.fetchConnection;
 
 import java.sql.*;
 import java.util.Scanner;
