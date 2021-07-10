@@ -31,3 +31,41 @@ deep copy
 5.1 Read day1-data\day1_help\jdbc help\SQL injection\regarding SQL injection
 5.2 Object class methods wait & notify
 5.3 Revise ITC
+
+Day 2
+
+0.First  ensure that , you have added Tomcat web server in your J2EE workspace & you have created n tested 1st dyn web project m having index.html content
+(refer to day2-data\day2_help\common help\steps in tomcat.txt)
+
+Revise class work.(by importing day2.1)
+
+1. JDBC assignment (MUST be done using layered approach)
+(refer to diag : day2-data\day2_help\case studies\voting assignment.png)
+
+Layers
+1.1 Table : voters & candidates (copy them from day2-data\day2_help\sql\my_sql_cmds_voting.txt)
+1.2 POJOs : Voter & Candidate
+1.3 DAO : IVoterDao , ICandidateDao & implementation classes.
+1.4 Tester
+
+Options
+1. Voter login
+i/p : email & password
+o/p status mesg
+Voter login successful, Your details ....
+
+2. Candidate registration
+i/p candidate details excluding id & votes (Accept name & party from user. id will be generated in auto-increment manner  & initialize votes=0)
+o/p : status message
+
+3. List all candidates
+
+4. Cast a Vote
+i/p : candidate id & voter id
+Action : inc candidate's votes & change voting status to true.
+o/p status mesg
+(Hint : invoke  2 separate methods  on 2 different daos : Voter Dao n Candidate Dao)
+
+Mandatory reading 
+1. HTTP basics
+2. web basics
