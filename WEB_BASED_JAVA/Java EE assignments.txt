@@ -45,8 +45,51 @@ Revise class work.(by importing day2.1)
 Layers
 1.1 Table : voters & candidates (copy them from day2-data\day2_help\sql\my_sql_cmds_voting.txt)
 1.2 POJOs : Voter & Candidate
+(POJO : state , def constr, parameterized constr, setters/getters,toString)
 1.3 DAO : IVoterDao , ICandidateDao & implementation classes.
+IVoterDao
+Voter authenticateVoter(String em,String pwd) throws SE
+String updateVotingStatus(int voterId) throws SE
+
+VoterDaoImpl
+state : cn ,pst1
+def constr : get cn from utils , create pst1
+CRUD methods : 
+public Voter authenticateVoter(String em,String pwd) throws SE
+{
+  1. set IN params : 2
+  2. execQuery --RST --if(....) return new Voter(...);
+   return null;
+}
+clean up
+
+1.4 ICandidateDao
+String registerCandidate(String name,String party) throws SqlExc
+String updateVotes(int candidateId) throws SqlExc
+
+CandidateDaoImpl
+state : cn , pst1
+def constr : get cn , pst1 : "insert into candidates values(default,?,?,0)"
+
+CRUD methods : 
+public String registerCandidate(String name,String party) throws SqlExc
+{
+  //set IN params , execUpdate ---> updateCount --1 --chk n ret sts mesg.
+}
+
+
+cleanup : close pst1
+
+
+
+
+
 1.4 Tester
+try(sc) 
+{exit=false;
+  instantiate VoterDao, CandidateDao 
+  while --try --switch case 
+}catch-all
 
 Options
 1. Voter login
@@ -69,3 +112,49 @@ o/p status mesg
 Mandatory reading 
 1. HTTP basics
 2. web basics
+
+
+Day 3
+With lab faculty's  help : 
+1. Understand how to  import existing dynamic web project n fix errors if any 
+
+2.Identify all possible clean up instructions , in case of errors
+
+Do the revsion , along with hands-on today.
+
+Create a new dynamic web project (check web.xml checkbox) : eg day3_lab1
+Solve following
+3. Create a welcome page : index.html
+Add a link : to invoke the servlet (which will be deployed using @WebServlet annoatation)
+
+Create FirstServlet.java , override life cycle methods & trace the life cycle.
+Use @WebServlet annoatation . WC should load this servlet lazily.
+
+4. Add another link in index.html : to invoke the servlet (which will be deployed using xml tags)
+
+Create SecondServlet.java , override life cycle methods & trace the life cycle.
+Do NOT Use @WebServlet annoatation , instead add xml tags in web.xml
+ . WC should load this servlet eagerly
+
+5. Add / in anchor tag's href. Observe n conclude
+
+6. Remove / from the url-pattern . Observe n conclude
+
+7. Give same url-pattern to both of these servlets . Observe n conclude
+
+8. Copy input.html from "day2-data\day2_help\HTML pages" , under webapp
+Write a servlet to send followoing response to the clnt
+Hello , user name
+Favorite Colors : ...
+Chosen Browser : ..
+Selected City : 
+About Yourself : 
+
+API Help (refer to Java EE docs for further clarity)
+
+How to read request params sent from the clnt ?
+
+javax.servlet.ServletRequest i/f methods
+1. public String getParameter(String paramName)
+
+2. public String[] getParameterValues(String paramName)
