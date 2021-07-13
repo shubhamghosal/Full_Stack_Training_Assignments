@@ -14,7 +14,7 @@ public class DBUtils {
 			// test : DB name
 			String url = "jdbc:mysql://localhost:3306/test?useSSL=false&allowPublicKeyRetrieval=true";
 //url userName password
-			cn = DriverManager.getConnection(url, "root", "root");
+			cn = DriverManager.getConnection(url, "root", "quantum@123");
 		}
 		return cn;
 

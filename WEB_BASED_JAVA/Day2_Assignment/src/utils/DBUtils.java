@@ -12,7 +12,7 @@ public class DBUtils {
 			try {
 				// Loading the jdbc drivers in method area
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				String db = "election";
+				String db = "voters";
 				String url = "jdbc:mysql://localhost:3306/$db?useSSL=false&allowPublicKeyRetrieval=true".replace("$db",db);
 				conn = DriverManager.getConnection(url, "root", "quantum@123");
 				return conn;

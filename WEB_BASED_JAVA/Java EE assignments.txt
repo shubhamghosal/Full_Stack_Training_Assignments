@@ -115,13 +115,12 @@ Mandatory reading
 
 
 Day 3
-With lab faculty's  help : 
+With lab facutly's  help : 
 1. Understand how to  import existing dynamic web project n fix errors if any 
 
 2.Identify all possible clean up instructions , in case of errors
 
 Do the revsion , along with hands-on today.
-
 Create a new dynamic web project (check web.xml checkbox) : eg day3_lab1
 Solve following
 3. Create a welcome page : index.html
@@ -150,7 +149,7 @@ Chosen Browser : ..
 Selected City : 
 About Yourself : 
 
-API Help (refer to Java EE docs for further clarity)
+API Help (refer to Java EE docs fro further clarity)
 
 How to read request params sent from the clnt ?
 
@@ -158,3 +157,26 @@ javax.servlet.ServletRequest i/f methods
 1. public String getParameter(String paramName)
 
 2. public String[] getParameterValues(String paramName)
+ 
+
+Day 4
+Revision
+1. import day4.2 in your workspace , replace DBUtils by yours.
+Trace the entire flow , to understand
+1.1 cookie based session tracking 
+1.2 redirect
+
+Observe the changes if cookies are not accepted by the client browser.
+Everything MUST be confirmed using "Inspect" of clnt browser (web dev tools)
+
+2. import day4.3 in your workspace , replace DBUtils by yours.
+Trace the entire flow , to understand
+2.1 HttpSession based session tracking 
+2.2 redirect
+
+Observe the changes if cookies are not accepted by the client browser.
+Everything MUST be confirmed using "Inspect" of clnt browser (web dev tools)
+
+3. Create new dyn web project : day4_lab
+Start working on "voting assignment" , as per the page flow , supplied in case studies.
+(For session tracking : use HttpSession API)
