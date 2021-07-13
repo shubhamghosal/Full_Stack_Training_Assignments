@@ -180,3 +180,21 @@ Everything MUST be confirmed using "Inspect" of clnt browser (web dev tools)
 3. Create new dyn web project : day4_lab
 Start working on "voting assignment" , as per the page flow , supplied in case studies.
 (For session tracking : use HttpSession API)
+3.1 Copy pkges : utils, pojos,dao , under <src>/main/java
+3.2 web.xml : welcome-file : login.html
+3.3 Copy login.html : <src>/main/webapp
+form action="voter_validate" , method=post
+3.4 VoterAuthServlet : eager
+init,destroy,doPost
+init : voter dao inst
+destroy : dao's cleanup(psts :close) , utils: closeConnection
+doPost : refer to the flowchart (voting-assgnment-help1.png)
+
+3.5 Copy Candidate pojo n Candidate dao.
+Refer to <day4-data>/day4-help/voting assignment help2.png
+
+Day 5
+1. import day5.1 in your workspace , edir DBUtils & trace entire flow from login to logout.
+
+2. Complete voting assignment
+(At least voter part . After completing voter role , do complete admin role)
