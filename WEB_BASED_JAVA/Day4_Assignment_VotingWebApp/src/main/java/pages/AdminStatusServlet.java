@@ -3,7 +3,9 @@ package pages;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,17 +20,17 @@ import pojos.Candidate;
 import pojos.Voter;
 
 /**
- * Servlet implementation class CandidateListServlet
+ * Servlet implementation class AdminStatusServlet
  */
-@WebServlet("/candidateList")
-public class CandidateListServlet extends HttpServlet {
+@WebServlet("/adminStatus")
+public class AdminStatusServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ICandidateDao candidateDao;
-	
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CandidateListServlet() {
+    public AdminStatusServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,41 +44,57 @@ public class CandidateListServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		try(PrintWriter pw = response.getWriter()) {
 			HttpSession session = request.getSession();
-			List<Candidate> candidates = candidateDao.listCandidates();
+			List<Candidate> top2Candidates = candidateDao.top2Analysis();
+			LinkedHashMap<String,Integer> partywiseAnalysis = candidateDao.partywiseAnalysis();
 			Voter v = (Voter)session.getAttribute("voter_details");
-			if (candidates !=null) {
-				pw.print("<h3> Hello, " + v.getName());
-				pw.print("<h3> Please vote here. </h3>");
-				pw.print("<form action='status'>");
+			if (top2Candidates !=null && partywiseAnalysis!=null) {
+				pw.print("<h3> Hello, " + v.getName() + ".</h3>");
+				pw.print("<h3> Vote Analysis</h3>");
+				pw.print("<h4> Top 2 Candidates </h4>");
 				pw.print("<table border=1>");
 				pw.print("<thead>");
-				pw.print("<th>Select</th>");
+				pw.print("<th>ID</th>");
 				pw.print("<th>Name</th>");
 				pw.print("<th>Party</th>");
+				pw.print("<th>Votes</th>");
 				pw.print("</thead>");
 				pw.print("<tbody>");
-				candidates.forEach(c->{
+				top2Candidates.forEach(c->{
 					pw.print("<tr>");
-					pw.print("<td><input type='radio' name='candidate' value="+c.getId()+"></td>");
+					pw.print("<td>"+c.getId()+"</td>");
 					pw.print("<td>"+c.getName()+"</td>");
 					pw.print("<td>"+c.getParty()+"</td>");
+					pw.print("<td>"+c.getVotes()+"</td>");
 					pw.print("</tr>");
 				});
 				pw.print("</tbody>");
 				pw.print("</table>");
-				pw.print("</br>");
-				pw.print("<input type='submit' value='Submit'>");
-				pw.print("</form>");
+				pw.print("<h4> Partywise Analysis </h4>");
+				pw.print("<table border=1>");
+				pw.print("<thead>");
+				pw.print("<th>Party</th>");
+				pw.print("<th>Votes</th>");
+				pw.print("</thead>");
+				pw.print("<tbody>");
+				for(Map.Entry<String,Integer> entry: partywiseAnalysis.entrySet()){
+					pw.print("<tr>");
+					pw.print("<td>"+entry.getKey()+"</td>");
+					pw.print("<td>"+entry.getValue()+"</td>");
+					pw.print("</tr>");
+				}
+				pw.print("</tbody>");
+				pw.print("</table>");
 			} else
 				pw.print("Candidates list is empty!");
 		} catch (SQLException e) {
-			throw new ServletException("Error in doGet() of candidateList");
+			throw new ServletException("Error in doGet() of adminStatus");
 		}
 	}
+
 }
