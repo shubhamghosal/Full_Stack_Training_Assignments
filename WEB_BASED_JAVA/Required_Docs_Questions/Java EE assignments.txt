@@ -198,3 +198,13 @@ Day 5
 
 2. Complete voting assignment
 (At least voter part . After completing voter role , do complete admin role)
+
+Day 6
+Mandatory Work
+1. Complete voting assignment including voter n admin role.
+
+2. Revise 
+Servlet life cycle , ServletConfig , init-params , executor frmwork & server pull.
+Import today's projects n revise the flow.
+
+3. Optional assignment will be shared later.
