@@ -208,3 +208,38 @@ Servlet life cycle , ServletConfig , init-params , executor frmwork & server pul
 Import today's projects n revise the flow.
 
 3. Optional assignment will be shared later.
+Refer to Online Bookshop assignment (refer to case study diagram)
+3.1 Add ShowCartServlet
+Since contents of ShowCartServlet & CheckOutPage are mostly the same, DO NOT repeat !
+create a common page : CartContentsPage(to greet user n display cart contents n total cart value)
+Use RequestDispatcher's include scenario , to dynamically include the contents of CartContentsPage into ShowCartServlet & CheckOutPage.
+
+3.2 Add "Register" button or a link in login.html. Complete customer registration part as per the case study diagram.
+
+3.3 After customer logs out , instead of giving him/her "Visit Again" link , navigate the client auto to login page after delay of 10sec.
+(Hint : 
+
+3.4 More Complex one!
+Objective : After user checks out the cart (i.e visits "LogoutPage") , the order & order details should be added suitably in DB.
+Hints 
+1. Refer to DB tables n ER diagram from "day1-data\day1_help\jdbc help\sql"
+
+2. Create additional POJOs  for Order n OrderLine (i.e order details)
+
+3. Create new DAO layer's class OrderDao
+& add a method to check out the cart(i.e store order n it's details in DB)
+
+Day 7
+1. Import day7.2 & revise JSP syntax
+(using "day7-data\day7_help\jsp_help\readme_jsp.txt")
+
+2. Refer to JSP declaration tag from above readme.
+Complete the assignment with the help of lab faculty 
+(day7-data\JSP assignment .png)
+
+3. Complete DAO layer of (day7-data\candidate-registration.png) 
+Will be solving this assginment tomorrow , using JSP & JavaBean
+
+4. Complete pending work.
+
+5. import day7.1 , to understand ServletContext, cotext-params & context listener.
