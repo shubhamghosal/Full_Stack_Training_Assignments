@@ -11,7 +11,7 @@
 <body>
 <jsp:setProperty property="*" name="user"/>
 <%-- JSP invokes JB's B.L method : EL syntax --%>
-<%--session.getAttribute("user").validateUser() --%>
+<%--response.sendRedirect(response.encodeRedirectURL(session.getAttribute("user").validateUser().concat(".jsp")) --%>
 <c:redirect  url="${sessionScope.user.validateUser()}.jsp"/>
  
 </body>

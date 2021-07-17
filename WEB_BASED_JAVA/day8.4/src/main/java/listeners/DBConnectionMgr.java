@@ -47,7 +47,8 @@ public class DBConnectionMgr implements ServletContextListener {
 			openConnection(ctx.getInitParameter("drvr"), ctx.getInitParameter("db_url"),
 					ctx.getInitParameter("user_name"), ctx.getInitParameter("pwd"));
 		} catch (Exception e) {
-			System.out.println("err in ctx-init " + e);
+//			System.out.println("err in ctx-init " + e);
+			e.printStackTrace();
 		}
 	}
 

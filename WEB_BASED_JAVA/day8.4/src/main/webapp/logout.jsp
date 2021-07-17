@@ -15,10 +15,12 @@
 	
 	${sessionScope.candidate.candidateDao.cleanUp()}
 	<%--create a page scoped attribute to store user's role --%>
+	<%-- pageContext.setAttribute("role",session.getAttribute("user").getValidUserDetails().getRole())--%>
 	<c:set var="role" value="${sessionScope.user.validUserDetails.role}"/>
 	
 	${pageContext.session.invalidate()}
 	<%--send the logout link iff user has logged in as admin --%>
+	<%--if(pageContext.getAttribute("role").equals("admin")) --%>
 	<c:if test="${pageScope.role eq 'admin'}">
 		<h5>
 			<a href="login.jsp">Visit Again</a>

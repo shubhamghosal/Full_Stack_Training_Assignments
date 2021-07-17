@@ -44,7 +44,7 @@ public class CandidateBean {
 		{
 			try {
 				message=candidateDao.registerCandidate(new Candidate(name, party));
-				return message;
+				return "admin_page";
 			} catch (SQLException e) {
 				//registration failed
 				message="registration failed : "+e.getMessage();

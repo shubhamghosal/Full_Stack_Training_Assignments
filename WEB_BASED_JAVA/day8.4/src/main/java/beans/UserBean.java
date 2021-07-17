@@ -72,7 +72,7 @@ public class UserBean {
 			//not yet voted 
 			return "candidate_list";
 		}
-		//invlaid login
+		//invalid login
 		message="Invalid Login , Please retry....";
 		return "login";
 	}
