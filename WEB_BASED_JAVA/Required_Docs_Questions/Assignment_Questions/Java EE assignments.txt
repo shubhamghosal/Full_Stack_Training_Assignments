@@ -242,4 +242,55 @@ Will be solving this assginment tomorrow , using JSP & JavaBean
 
 4. Complete pending work.
 
-5. import day7.1 , to understand ServletContext, cotext-params & context listener.
+Day 8
+1. import day8.2 & revise completely JSP--JavaBean--DAO--POJO--DB flow.
+(use readme_jsp for better clarity & refer to  JSP --JB diagrams)
+
+2. Identify "double submit issue" with server pull & replace it by client pull
+(JSTL tags)
+
+3. Solve assignment of registering new candidate under "admin" role (with lab faculty's help)
+(refer : candidate-registration.png)
+
+4. Refer to  "day8_data\maven\maven instructions for Java SE with Hibernate.txt" OR import "day8_data\maven\test_hibernate_maven" , as existing maven project.
+
+
+Day 9
+1. Complete the following (in a combined lab)
+1.1  Persist user information
+
+1.2 Get user details by PK
+
+1.3 Get all user details. (PENDING!!!)
+
+---------------
+1.4 Revise class work by importing day8.4 (a web app) in your workspace & trace all the layers
+JSP--JavaBean --JDBC Based DAO(DBUtils)--POJO --DB
+
+1.5 Refer to "day9_data\day9_help\ready code\jstl_demo" : It's a web app , a demo of JSTL tags.
+
+1.6 Revise steps in creating hibernate based project.
+
+Hands on 
+
+2. Create Maven based hibernate project from scratch OR copy it from template project supplied here
+"day9_data\eclipse_projects" & edit hibernate.cfg.xml as per your own DB settings.
+
+2.1 Test booting up hibernate framework
+
+2.2 Create a Vendor POJO with following state.
+id (Long) ,  name (string) , email  (string : unique) , password(string)    ,regAmount (double) , regDate (LocalDate)
+Add JPA annotations
+
+2.3 Check auto table creation
+
+2.4 Create hibernate based DAO layer n testers for the following
+Insert atleast 3 vendor details (using session.save)
+
+
+2.5 Get vendor details by vendor id.
+---------------------------------------------
+Later : 
+2.5 Get all vendor details
+
+2.6 Update reg amount 
