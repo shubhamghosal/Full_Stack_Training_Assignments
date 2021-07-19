@@ -279,7 +279,7 @@ Hands on
 2.1 Test booting up hibernate framework
 
 2.2 Create a Vendor POJO with following state.
-id (Long) ,  name (string) , email  (string : unique) , password(string)    ,regAmount (double) , regDate (LocalDate)
+id (Long) ,  name (string) , email  (string : unique) , password(string) : NOT NULL  ,regAmount (double) , regDate (LocalDate)
 Add JPA annotations
 
 2.3 Check auto table creation
@@ -294,3 +294,62 @@ Later :
 2.5 Get all vendor details
 
 2.6 Update reg amount 
+--------------------
+Important revision topics(to go over through weekend)
+1. Servlet life cycle
+2. Session Tracking (HttpSession based)
+3. Page Navigation techniques : redirect n RD's forward
+4. JSP --JB --DAO --POJO --DB
+5. JSTL tags : redirect , forEach,url,if,choose/when/otherwise
+
+
+Day 10
+1. Complete more objectives (update , delete in a combined lab)
+
+2. Revise class work completely.
+
+3. Complete CRUD work for Vendor
+3.1 Register New Vendor
+I/P : all vendor details excluding vendor id
+O/P a message indicating success or failure
+eg : String registerVendor(Vendor vendor);
+session.save
+
+3.2 Vendor Login 
+I/P email , password
+O/P : Login successful with vendor details or invalid login message.
+eg : String authenticateVendor(String email,String pwd);
+jpql="select v from Vendor v where v.email=:em and v.password=:pass";
+Vendor v=session -- createQuery(jpql,Vendor.class).setParameter(....).setParameter(....).getSingleResult(); --- throws NoResultException ---invalid login
+
+
+3.3 Update vendor's reg amount
+I/P : email , reg amount offset
+O/P a message indicating success or failure
+eg : String updateRegAmount(email,offset)
+jpql="select v from Vendor v where v.email=:em"
+Vendor v=session -- createQuery(jpql,Vendor.class).setParameter(....).getSingleResult();
+v : persistent
+setter....
+commit
+
+3.4 Delete all vendor details whose reg amount < specified amount & registered after specific date.
+I/P : reg amount n reg date
+O/P a message indicating success or failure
+eg : Bulk deletion
+jpql ="delete from Vendor v where ....."
+int count=session. createQuery(jpql).setParameter(....).setParameter(....).executeUpdate();
+
+
+OR
+Complete DAO / POJOs for the voting assignemnt with "admin" role or "voter" role
+
+
+
+
+
+
+
+
+
+
