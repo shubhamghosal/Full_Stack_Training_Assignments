@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.app</groupId>
-	<artifactId>day10.1</artifactId>
+	<artifactId>day10.1c</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>day10.1</name>
+	<name>day10.1c</name>
 	<description>Java SE with Hibernate CRUD ops</description>
 	<build>
 		<plugins>
@@ -19,7 +19,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>day10.1</finalName>
+		<finalName>day10.1c</finalName>
 
 	</build>
 	<dependencies>
