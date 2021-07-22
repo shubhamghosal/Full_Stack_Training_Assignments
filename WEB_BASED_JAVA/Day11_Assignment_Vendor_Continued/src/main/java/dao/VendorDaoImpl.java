@@ -154,15 +154,17 @@ public class VendorDaoImpl implements IVendorDao {
 		try {
 			int count = session.createQuery(jpql).setParameter("regAmt", regAmt).setParameter("regDate", regDate)
 					.executeUpdate();
-			mesg = "Vendor details deletion succeeded for " + count + " entry...";
-		} catch (NoResultException e) {
+			if (count > 0)
+				mesg = "Vendor details deletion succeeded for " + count + " entry...";
+			tx.commit();
+		} catch (RuntimeException e) {
 			if (tx != null)
 				tx.rollback();
 			mesg = "Invalid Entry...Deletion Failed...";
 			throw e;
 		} finally {
 			if (session != null)
-				session.close();
+				session.clear();
 		}
 		return mesg;
 	}

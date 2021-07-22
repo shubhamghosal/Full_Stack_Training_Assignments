@@ -16,8 +16,6 @@ import javax.persistence.Table;
 @Table(name = "vendor_table")
 public class Vendor extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "vendor_id")
-	private Long vendorId;
 	@Column(length = 20)
 	private String name;
 	@Column(length = 20, unique = true)
@@ -44,14 +42,6 @@ public class Vendor extends BaseEntity {
 		this.password = password;
 		this.regAmount = regAmount;
 		this.regDate = regDate;
-	}
-
-	public Long getVendorId() {
-		return vendorId;
-	}
-
-	public void setVendorId(Long vendorId) {
-		this.vendorId = vendorId;
 	}
 
 	public String getName() {
@@ -119,7 +109,7 @@ public class Vendor extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Vendor [vendorId=" + vendorId + ", name=" + name + ", email=" + email + ", password=" + password
+		return "Vendor [Id=" + super.getId() + ", name=" + name + ", email=" + email + ", password=" + password
 				+ ", regAmount=" + regAmount + ", regDate=" + regDate + "]";
 	}
 
