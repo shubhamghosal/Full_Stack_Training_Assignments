@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.app</groupId>
-  <artifactId>day12_lab</artifactId>
+  <artifactId>Day12_Assignment_Lab</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>day12_lab</name>
+  <name>Day12_Assignment_Lab</name>
   <description>Maven based Web App with hibernatenn n MySql dependencies</description>
   <build>
 		<plugins>
@@ -21,7 +21,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.0.0</version>
 				<configuration>
-					<warName>day12_lab</warName>
+					<warName>Day12_Assignment_Lab</warName>
 				</configuration>
 			</plugin>
 		</plugins>
