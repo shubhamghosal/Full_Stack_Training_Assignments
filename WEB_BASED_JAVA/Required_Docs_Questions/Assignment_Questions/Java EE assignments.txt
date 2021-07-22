@@ -346,10 +346,53 @@ Complete DAO / POJOs for the voting assignemnt with "admin" role or "voter" role
 
 
 
+Day 11
+In combined lab : 
+1. Identify n Solve lazy init issues .
+2. Create one to one bi directional association , with shared primary key , between Student & Address.
+3. Replace it by uni dir , for reducing no of queries.
+
+
+3. Revise class work
+1.1 import day11.1 , to revise Blob handling
+1.2 import day11.2 , to revise one to many & one to one bi directional association between entities.
+
+4.Hands on (Mandatory)
+4.1 Create Vendor 1<---->* BankAccount , bi directional one to many association
+4.2 Create Vendor 1<----Location , uni dir one to one association.
+Optional
+4.3 Create Topic 1 <-----* Tutorial , uni directional  many to one association
 
 
 
+Day 12
+In a combined lab : 
+1. Create maven based spring application (Java SE based) , to demo setter based D.I & spring beans life cycle.
+(copy it from the template)
 
+2. Refer to "web-app-hibernate-integration-assgnment" , from day12-data
+Start with the design part .
 
+3. Replace setter based D.I by constructor based D.I (if time permits , in the combined lab)
 
+4. Complete the implementation of "web-app-hibernate-integration-assgnment"  in the individual labs. Revise complete class work.
 
+Optional work
+5. Refer to Vendors-ER-Diag , from day12-data.
+Complete POJO's design from the supplied diagram.
+
+Day 13
+1. Revise spring bean life cycle , modes of wiring , by importing day13.1 to day13.6 projects
+day13.1 : spring bean life cycle with setter based D.I(Look at all interfaces , classes , TestSpring & bean config xml file)
+Next time onwards : simply open dependent bean & xml file
+day13.2 : constr based D.I
+day13.3 : factory method based D.I
+day13.4 : autowiring byName
+day13.5 : autowiring byType
+day13.6 : autowiring  constructor
+
+2. Replace bulk of XML by annotations , use hybrid approach .
+
+3. Complete pending work.
+
+4. Refer to MVC help.
