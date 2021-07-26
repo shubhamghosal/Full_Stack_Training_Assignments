@@ -395,4 +395,5 @@ day13.6 : autowiring  constructor
 
 3. Complete pending work.
 
-4. Refer to MVC help.
+Day 14 
+Create maven based web app (w/o spring boot) with Spring MVC & Hibernate , to start solving vendor case study.
