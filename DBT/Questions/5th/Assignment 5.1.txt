@@ -1,0 +1,27 @@
+1) Display all records in EMP table those were joined before SCOTT joined?
+
+2) Display details of department where department has 3 employees?
+
+3) Display details of department with Minimum salary and maximum salary?
+
+4) Display all ename, sal, deptno,dname from emp, dept table where all department which has employees as well as department does not have any employees. This query should include non matching rows.
+
+5) Display all ename, sal, deptno from emp, dept table where all employees which has matching department as well as employee does not have any departments. This query should include non matching rows.
+
+6) Display all ename, sal, dname. Result must include all employees as well as all departments. This query should include non matching rows on both the tables.
+
+7) Display all ename, empno, dname from emp, dept table without joining two tables
+
+8) Display all the departments where department does not have any employees
+
+9) Display all the departments where department does have atleast one employee
+
+10) Display all employees those who are not managers?
+
+11) Display all the records for deptno which belongs to employee name JAMES?
+
+12) Display all the records in emp table where salary should be less then or equal to ADAMS salary?
+
+13) Display ename, sal, grade, dname, loc for each employee.
+
+14) Display all employee whose location is DALLAS?
