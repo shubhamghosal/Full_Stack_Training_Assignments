@@ -1,0 +1,12 @@
+Functions
+
+1. Write a program to take the input as empno and return the experience of employee in terms of number of years.
+
+2. Write a program to take the input as deptno and return the comma separated list of employee names
+
+3. Add a new column incentive to emp table. Write a program to calculate and update the incentive using following logic.
+     If employees salary is more then avg salary of dept then incentive is 0
+	 If employees salary is less then avg salary of dept then incentive is 10% of salary
+
+4. Write a program to get the count of employees working in provided deptno
+

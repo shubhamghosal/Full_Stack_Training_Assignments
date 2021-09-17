@@ -1,0 +1,18 @@
+Procedure
+==========
+1. Prepare a program which can perform following operation
+	- Lookout for tables which has missing constraints
+	- Display list of those tables
+	
+2. Prepare a program to delete the data from emp. It will receive two inputs employee number and employee name. If employee number is passed as null then delete the data based on employee name.
+Backup the deleted data to employee_backup table.
+
+3. Prepare a program to insert new record in employee table. it will take the input of employee data.
+If salary is provided as null then consider the salary as highest salary earned by any employee in same department. If comm is not provided then assume it as 200$
+
+4. Prepare a program to receive the input as table name and column name. Add primary key constraint on provided table's column.
+
+5. Prepare a program to list those employee who are earning less then avg of there deparment. This program may take input as (p_salary_fix BOOLEAN). If the input is given as true then these employees salary must be set to AVG Salary + 100$.
+
+
+

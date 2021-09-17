@@ -1,0 +1,38 @@
+Java sort : PT0.0059987S
+Merge sort : PT0.0180011S
+Selection sort : PT0.1390091S
+Bubble sort : PT0.4090304S
+Heap sort : PT0.005S
+Quick sort2 : PT0.1410076S
+Insertion sort : PT0.078004S
+Quick sort : PT0.2030123S
+
+
+Java sort : PT0.0060003S
+Merge sort : PT0.0180008S
+Selection sort : PT0.1270066S
+Bubble sort : PT0.3890248S
+Heap sort : PT0.0039966S
+Quick sort2 : PT0.1370094S
+Insertion sort : PT0.0590048S
+Quick sort : PT0.2190149S
+
+
+Java sort : PT0.0050006S
+Merge sort : PT0.0039989S
+Selection sort : PT0.1470086S
+Bubble sort : PT0.4180297S
+Heap sort : PT0.0050001S
+Quick sort2 : PT0.1440086S
+Insertion sort : PT0.0630011S
+Quick sort : PT0.2020122S
+
+
+Java sort : PT0.0070002S
+Merge sort : PT0.0050005S
+Selection sort : PT0.1640114S
+Bubble sort : PT0.3850274S
+Heap sort : PT0.0060001S
+Quick sort2 : PT0.1300219S
+Insertion sort : PT0.061002S
+Quick sort : PT0.1960061S
