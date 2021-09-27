@@ -6,8 +6,7 @@ Batch 4
 PRN : 210540181196
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
-
-Q.1) Write a script where user enters a username and outputs says if that user is present on linux bo or not
+Q.1) Write a new code to check whether
 
 [root@localhost ~]# cat /etc/passwd | cut -d':' -f1,7 | grep 'bash'
 root:/bin/bash
